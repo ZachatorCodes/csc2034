@@ -32,6 +32,6 @@ int main(int, char **)
         std::cout << x << " ";
     }
     std::cout << std::endl;
-    
+
     // --------------------------------
 }
