@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 int main(int, char **)
 {
@@ -44,7 +45,42 @@ int main(int, char **)
     // Insert into vector
     vc.push_back('e');
 
-    for(char x: vc) {
+    for (auto x : vc)
+    {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    vc.insert(vc.begin(), 'f');
+    for (auto x : vc)
+    {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    vc.insert(vc.begin() + 3, 'w');
+    for (auto x : vc)
+    {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
+
+    // Remove very last element
+    vc.pop_back();
+
+    // Remove element at index 3
+    vc.erase(vc.begin() + 3);
+
+    // Remove a particular element (find)
+    vc.erase(std::find(vc.begin(), vc.end(), 'b'));
+
+    if (!vc.empty())
+    {
+        std::cout << "List is not empty" << std::endl;
+    }
+
+    for (auto x : vc)
+    {
         std::cout << x << " ";
     }
     std::cout << std::endl;
