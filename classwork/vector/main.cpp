@@ -15,6 +15,10 @@ int main(int, char **)
     int num{5};
     int num2 = 5; // Better format for scalar values
 
+    // Traversing a vector
+    // --------------------------------
+
+    // For loop
     for (int i = 0; i < v2.size(); i++)
     {
         // std::cout << v2[i] << " ";
@@ -28,4 +32,6 @@ int main(int, char **)
         std::cout << x << " ";
     }
     std::cout << std::endl;
+    
+    // --------------------------------
 }
