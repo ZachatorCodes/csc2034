@@ -34,4 +34,18 @@ int main(int, char **)
     std::cout << std::endl;
 
     // --------------------------------
+
+    // Inserting things into vetor
+    // --------------------------------
+
+    // Initialize new character vector
+    std::vector<char> vc{'b', 'c', 'a'};
+
+    // Insert into vector
+    vc.push_back('e');
+
+    for(char x: vc) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
 }
