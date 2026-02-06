@@ -1,3 +1,0 @@
-C:/Users/zschw/Development/code/front-range/csc2034/classwork/cmake-preset-test/out/build/GCC/CMakeFiles/cmake-preset-test.dir
-C:/Users/zschw/Development/code/front-range/csc2034/classwork/cmake-preset-test/out/build/GCC/CMakeFiles/edit_cache.dir
-C:/Users/zschw/Development/code/front-range/csc2034/classwork/cmake-preset-test/out/build/GCC/CMakeFiles/rebuild_cache.dir
