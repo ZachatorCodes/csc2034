@@ -11,13 +11,13 @@ void printCArray(int arr[], size_t size)
     std::cout << std::endl;
 }
 
-void printStdArray(std::array<int, 3>& arr) // AMPERSAND MEANS REFERENCE, NOT COPY
+void printStdArray(const std::array<int, 3>& arr) // AMPERSAND MEANS REFERENCE, NOT COPY
 {
-    std::cout << "Std Array: ";
-    for (size_t i = 0; i < arr.size(); i++)
-    {
-        arr[i] *= 2;
-    }
+    // std::cout << "Std Array: ";
+    // for (size_t i = 0; i < arr.size(); i++)
+    // {
+    //     arr[i] *= 2;
+    // }
     for (int val : arr)
     {
         std::cout << val << " ";
