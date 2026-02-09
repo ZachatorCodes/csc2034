@@ -15,7 +15,7 @@ int sumOfDoubleEvenPlace(unsigned long long int number);
 
 // Return this number if argument is a single digit,
 // otherwise return the sum of the two digit argument.
-int getDigit(int number);
+int getDigit(int number); // DONE
 
 // Return sum of odd placed digits in argument
 int sumOfOddPlace(unsigned long long int number); // DONE
