@@ -88,3 +88,19 @@ int sumOfOddPlace(unsigned long long int number)
   }
   return oddSum;
 }
+
+int getDigit(int number)
+{
+  int numLength = getSize(number);
+  if (numLength > 1)
+  {
+    int numSum = 0;
+    for (int i = 0; i < numLength; i++)
+    {
+      numSum += number % 10;
+      number /= 10;
+    }
+    return getDigit(numSum);
+  }
+  return number;
+}
