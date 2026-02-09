@@ -32,6 +32,7 @@ bool isValid(unsigned long long int number)
   {
     return false;
   }
+  return true;
 }
 
 int getSize(unsigned long long int num)
