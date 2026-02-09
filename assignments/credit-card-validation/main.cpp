@@ -3,9 +3,9 @@
 
 int main(int, char **)
 {
-    long int ccNumber;
-    char repeat = 'y';
-    std::string holder = "";
+    long long int ccNumber;
+    char repeat = 'n';
+    bool valid = false;
     std::cout << "\nHello, from CreditCardValidation!" << std::endl;
     do
     {
