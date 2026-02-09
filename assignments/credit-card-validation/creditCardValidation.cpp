@@ -70,3 +70,8 @@ unsigned long int getPrefix(unsigned long long int number, int k)
   std::cout << number;
   return number;
 }
+
+bool prefixMatched(unsigned long long int number, int d)
+{
+  return getPrefix(number, getSize(d)) == d;
+}
