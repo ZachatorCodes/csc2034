@@ -55,3 +55,18 @@ int getSize(unsigned long long int num)
   // std::cout << "\n\n" << counter;
   return counter;
 }
+
+unsigned long int getPrefix(unsigned long long int number, int k)
+{
+  int numLength = getSize(number);
+  if (numLength > k)
+  {
+    int difference = numLength - k;
+    for (int i = 0; i < difference; i++)
+    {
+      number /= 10;
+    }
+  }
+  std::cout << number;
+  return number;
+}
