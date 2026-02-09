@@ -11,7 +11,7 @@ using namespace std;
 bool isValid(unsigned long long int number);
 
 // Get the result from step 2
-int sumOfDoubleEvenPlace(unsigned long long int number);
+int sumOfDoubleEvenPlace(unsigned long long int number); // DONE
 
 // Return this number if argument is a single digit,
 // otherwise return the sum of the two digit argument.
