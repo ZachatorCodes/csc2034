@@ -18,7 +18,7 @@ int sumOfDoubleEvenPlace(unsigned long long int number);
 int getDigit(int number);
 
 // Return sum of odd placed digits in argument
-int sumOfOddPlace(unsigned long long int number);
+int sumOfOddPlace(unsigned long long int number); // DONE
 
 // Return true if prefix d is a prefix for number
 bool prefixMatched(unsigned long long int number, int d); // DONE
