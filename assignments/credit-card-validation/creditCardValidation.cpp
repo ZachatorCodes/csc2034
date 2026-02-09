@@ -75,3 +75,16 @@ bool prefixMatched(unsigned long long int number, int d)
 {
   return getPrefix(number, getSize(d)) == d;
 }
+
+// Return sum of odd placed digits in argument
+int sumOfOddPlace(unsigned long long int number)
+{
+  int numLength = getSize(number);
+  int oddSum = 0;
+  for (int i = 0; i < numLength / 2 + 1; i++) {
+    oddSum += number % 10;
+    number /= 10;
+    number /= 10;
+  }
+  return oddSum;
+}
