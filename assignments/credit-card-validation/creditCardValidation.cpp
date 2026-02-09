@@ -3,6 +3,10 @@ using namespace std;
 
 // A program using Hans Luhn's algorithm to validate a c/c number.
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Prototypes
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 // Return true if the argument is a valid card number. main() will call this function.
 bool isValid(unsigned long long int number);
 
@@ -26,6 +30,10 @@ int getSize(unsigned long long int num);
 // If the number of digits in number is is less than k, return number.
 unsigned long int getPrefix(unsigned long long int number, int k);
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Functions
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 bool isValid(unsigned long long int number)
 {
   if (getSize(number) < 13 || getSize(number) > 16)
@@ -38,7 +46,8 @@ bool isValid(unsigned long long int number)
 int getSize(unsigned long long int num)
 {
   int counter = 0;
-  while (num > 0) {
+  while (num > 0)
+  {
     // std::cout << num << std::endl;
     num /= 10;
     counter++;
