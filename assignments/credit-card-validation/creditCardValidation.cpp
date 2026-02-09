@@ -80,7 +80,8 @@ int sumOfOddPlace(unsigned long long int number)
 {
   int numLength = getSize(number);
   int oddSum = 0;
-  for (int i = 0; i < numLength / 2 + 1; i++) {
+  for (int i = 0; i < numLength / 2 + 1; i++)
+  {
     oddSum += number % 10;
     number /= 10;
     number /= 10;
