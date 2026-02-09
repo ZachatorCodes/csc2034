@@ -89,6 +89,20 @@ int sumOfOddPlace(unsigned long long int number)
   return oddSum;
 }
 
+// Get the result from step 2
+int sumOfDoubleEvenPlace(unsigned long long int number)
+{
+  int numLength = getSize(number);
+  int evenSum = 0;
+  for (int i = 0; i < numLength / 2; i++)
+  {
+    number /= 10;
+    evenSum += getDigit(2 * (number % 10));
+    number /= 10;
+  }
+  return evenSum;
+}
+
 int getDigit(int number)
 {
   int numLength = getSize(number);
