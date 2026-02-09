@@ -15,16 +15,16 @@ int sumOfDoubleEvenPlace(unsigned long long int number);
 
 // Return this number if argument is a single digit,
 // otherwise return the sum of the two digit argument.
-int getDigit(int);
+int getDigit(int number);
 
 // Return sum of odd placed digits in argument
-int sumOfOddPlace(unsigned long long int);
+int sumOfOddPlace(unsigned long long int number);
 
 // Return true if prefix d is a prefix for number
 bool prefixMatched(unsigned long long int number, int d); // DONE
 
 // Return the number of digits in argument
-int getSize(unsigned long long int num); // DONE
+int getSize(unsigned long long int number); // DONE
 
 // Return the first k number of digits from number.
 // If the number of digits in number is is less than k, return number.
@@ -43,13 +43,13 @@ bool isValid(unsigned long long int number)
   return true;
 }
 
-int getSize(unsigned long long int num)
+int getSize(unsigned long long int number)
 {
   int counter = 0;
-  while (num > 0)
+  while (number > 0)
   {
     // std::cout << num << std::endl;
-    num /= 10;
+    number /= 10;
     counter++;
   }
   // std::cout << "\n\n" << counter;
