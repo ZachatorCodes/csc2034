@@ -67,7 +67,7 @@ unsigned long int getPrefix(unsigned long long int number, int k)
       number /= 10;
     }
   }
-  std::cout << number;
+  // std::cout << number;
   return number;
 }
 
