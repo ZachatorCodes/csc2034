@@ -24,11 +24,11 @@ int sumOfOddPlace(unsigned long long int);
 bool prefixMatched(unsigned long long int number, int d);
 
 // Return the number of digits in argument
-int getSize(unsigned long long int num);
+int getSize(unsigned long long int num); // DONE
 
 // Return the first k number of digits from number.
 // If the number of digits in number is is less than k, return number.
-unsigned long int getPrefix(unsigned long long int number, int k);
+unsigned long int getPrefix(unsigned long long int number, int k); // DONE
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // Functions
