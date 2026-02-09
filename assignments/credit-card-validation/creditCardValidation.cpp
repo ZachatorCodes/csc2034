@@ -21,7 +21,7 @@ int getDigit(int);
 int sumOfOddPlace(unsigned long long int);
 
 // Return true if prefix d is a prefix for number
-bool prefixMatched(unsigned long long int number, int d);
+bool prefixMatched(unsigned long long int number, int d); // DONE
 
 // Return the number of digits in argument
 int getSize(unsigned long long int num); // DONE
