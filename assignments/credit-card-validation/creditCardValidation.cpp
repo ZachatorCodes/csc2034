@@ -36,10 +36,26 @@ unsigned long int getPrefix(unsigned long long int number, int k); // DONE
 
 bool isValid(unsigned long long int number)
 {
+  // Check that size is between 13 and 16
   if (getSize(number) < 13 || getSize(number) > 16)
   {
     return false;
   }
+  // Check that starting digit is good.
+  if (getPrefix(number, 1) != 4 && getPrefix(number, 1) != 5 && getPrefix(number, 1) != 6 && getPrefix(number, 2) != 37)
+  {
+    return false;
+  }
+
+  int evenSum = sumOfDoubleEvenPlace(number);
+  int oddSum = sumOfOddPlace(number);
+  int total = oddSum + evenSum;
+
+  if (total % 10 != 0)
+  {
+    return false;
+  }
+
   return true;
 }
 
