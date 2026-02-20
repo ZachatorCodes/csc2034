@@ -6,7 +6,7 @@ void collectData();
 void findMedian();
 
 // Function Definitions
-void collectData()
+void collectData(std::vector<double> &nums)
 {
     std::cout << "Test Print";
 }
