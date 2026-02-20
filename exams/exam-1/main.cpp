@@ -3,6 +3,12 @@
 
 int main(int, char **)
 {
-    std::cout << "Hello, from exam-1!\n";
-    collectData();
+    // provide user with basic program functionality information
+    std::cout << "Welcome to the Zach's median finder application!" << '\n'
+              << "You can enter as many positive numbers as you would like." << '\n'
+              << "To end data collection, enter any negative number." << '\n'
+              << std::endl;
+
+    std::vector<double> nums{}; // initialize empty vector
+    collectData(nums);          // collect data method from median.cpp file
 }
