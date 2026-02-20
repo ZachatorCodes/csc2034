@@ -26,6 +26,7 @@ int main(int, char **)
     {
         std::cout << "Median DNE for an empty set.";
     }
+    std::cout << std::endl;
 
     // print ending statement
     std::cout << "----------------------------------------" << '\n'
