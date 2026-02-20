@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 // Function Prototypes
 void collectData();
