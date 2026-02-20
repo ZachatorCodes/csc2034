@@ -2,8 +2,9 @@
 #include <vector>
 
 // Function Prototypes
-void collectData();
-void findMedian();
+void collectData(std::vector<double> &nums);
+double findMedian(const std::vector<double> &nums);
+void printVector(const std::vector<double> &nums);
 
 // Function Definitions
 void collectData(std::vector<double> &nums)
