@@ -15,4 +15,21 @@ int main(int, char **)
     collectData(nums);          // collect data method from median.cpp file
 
     std::sort(nums.begin(), nums.end()); // sort numbers from smallest to biggest
+    printVector(nums);                   // print sorted numbers
+
+    double median = findMedian(nums); // call function and store return value as median
+    if (nums.size() > 0)              // print median value or that median DNE
+    {
+        std::cout << "Median: " << median;
+    }
+    else
+    {
+        std::cout << "Median DNE for an empty set.";
+    }
+
+    // print ending statement
+    std::cout << "----------------------------------------" << '\n'
+              << "Thank you for using the program." << '\n'
+              << "Goodbye!" << '\n'
+              << "----------------------------------------" << std::endl;
 }
