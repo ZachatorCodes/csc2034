@@ -54,7 +54,8 @@ void printVector(const std::vector<double> &nums)
     std::cout << "----------------------------------------" << '\n';
     if (nums.size() > 0)
     {
-        for (auto x : nums)
+        std::cout << "Numbers entered: ";
+        for (size_t i = 0; i < nums.size(); i++)
         {
             std::cout << x << ' ';
         }
