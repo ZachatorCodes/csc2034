@@ -70,6 +70,6 @@ void printVector(const std::vector<double> &nums)
     }
     else
     {
-        std::cout << "You did not enter any numbers. Goodbye!" << std::endl;
+        std::cout << "You did not enter any numbers." << std::endl;
     }
 }
