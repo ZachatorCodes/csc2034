@@ -39,7 +39,6 @@ double findMedian(const std::vector<double> &nums)
     {
         double num1{nums[(nums.size() / 2) - 1]};
         double num2{nums[(nums.size() / 2)]};
-        std::cout << num1 << ' ' << num2 << std::endl;
         median = (num1 + num2) / 2;
     }
     else
