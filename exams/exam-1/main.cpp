@@ -1,5 +1,6 @@
 #include <iostream>
 #include "median.cpp"
+#include <algorithm>
 
 int main(int, char **)
 {
