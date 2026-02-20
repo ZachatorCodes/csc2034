@@ -24,6 +24,31 @@ void collectData(std::vector<double> &nums)
     } while (userNum > -1);
 }
 
+double findMedian(const std::vector<double> &nums)
+{
+    double median;
+    if (nums.size() < 1)
+    {
+        median = 0;
+    }
+    else if (nums.size() == 1)
+    {
+        median = nums[0];
+    }
+    else if (nums.size() % 2 == 0)
+    {
+        double num1{nums[(nums.size() / 2) - 1]};
+        double num2{nums[(nums.size() / 2)]};
+        std::cout << num1 << ' ' << num2 << std::endl;
+        median = (num1 + num2) / 2;
+    }
+    else
+    {
+        median = nums[nums.size() / 2];
+    }
+    return median;
+}
+
 void printVector(const std::vector<double> &nums)
 {
     std::cout << '\n';
