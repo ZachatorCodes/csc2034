@@ -22,3 +22,20 @@ void collectData(std::vector<double> &nums)
         }
     } while (userNum > -1);
 }
+
+void printVector(const std::vector<double> &nums)
+{
+    std::cout << '\n';
+    if (nums.size() > 0)
+    {
+        for (auto x : nums)
+        {
+            std::cout << x << ' ';
+        }
+        std::cout << std::endl;
+    }
+    else
+    {
+        std::cout << "You did not enter any numbers. Goodbye!" << std::endl;
+    }
+}
