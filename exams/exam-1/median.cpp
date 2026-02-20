@@ -51,7 +51,7 @@ double findMedian(const std::vector<double> &nums)
 
 void printVector(const std::vector<double> &nums)
 {
-    std::cout << '\n';
+    std::cout << "----------------------------------------" << '\n';
     if (nums.size() > 0)
     {
         for (auto x : nums)
