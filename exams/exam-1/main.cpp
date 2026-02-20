@@ -11,7 +11,7 @@ int main(int, char **)
               << "To end data collection, enter any negative number." << '\n'
               << "----------------------------------------" << std::endl;
 
-    std::vector<double> nums{}; // initialize empty double vector
+    std::vector<double> nums{}; // initialize empty double vector with length 0
     collectData(nums);          // collect data method from median.cpp file
 
     std::sort(nums.begin(), nums.end()); // sort numbers from smallest to biggest
