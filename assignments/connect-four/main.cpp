@@ -43,7 +43,7 @@ void print2DArray(const Array2D<T, Row, Col> &arr)
 
 void printGameInfo()
 {
-    std::cout << "--------------------------" << '\n'
+    std::cout << "------------------------------------" << '\n'
               << "Welcome to Connect 4!" << '\n'
               << "First play to CONNECT FOUR PIECES wins!" << '\n'
               << "--------------------------" << std::endl;
