@@ -28,6 +28,7 @@ template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr)
 {
     std::cout << '\n';
+    std::cout << "|1|2|3|4|5|6|7|" << '\n' << "---------------" << std::endl;
     for (const auto &row : arr)
     {
         for (const auto &element : row)
