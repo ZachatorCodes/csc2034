@@ -9,6 +9,8 @@ using Array2D = std::array<std::array<T, Col>, Row>;
 template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr);
 
+void printGameInfo();
+
 int main(int, char **)
 {
     Array2D<char, 6, 7> board{{
@@ -20,6 +22,7 @@ int main(int, char **)
         {' ', ' ', ' ', ' ', ' ', ' ', ' '},
     }};
 
+    printGameInfo();
     print2DArray(board);
 }
 
@@ -40,7 +43,7 @@ void print2DArray(const Array2D<T, Row, Col> &arr)
     }
 }
 
-void gameInfo()
+void printGameInfo()
 {
     std::cout << "--------------------------" << '\n'
               << "Welcome to Connect 4!" << '\n'
