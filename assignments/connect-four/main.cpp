@@ -48,3 +48,8 @@ void printGameInfo()
               << "First play to CONNECT FOUR PIECES wins!" << '\n'
               << "------------------------------------" << std::endl;
 }
+
+void runGame()
+{
+}
+
