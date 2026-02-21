@@ -9,6 +9,10 @@ using Array2D = std::array<std::array<T, Col>, Row>;
 template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr);
 
+// Prototype for function with no parameter and template return type
+template <typename T, std::size_t Row, std::size_t Col>
+Array2D<T, Row, Col> buildBoard();
+
 void printGameInfo();
 void runGame();
 
