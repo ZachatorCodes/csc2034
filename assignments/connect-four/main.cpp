@@ -18,14 +18,7 @@ void runGame();
 
 int main(int, char **)
 {
-    Array2D<char, 6, 7> board{{
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-    }};
+    Array2D<char, 6, 7> board = buildBoard<char, 6, 7>();
 
     printGameInfo();
     print2DArray(board);
