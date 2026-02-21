@@ -53,3 +53,16 @@ void runGame()
 {
 }
 
+template <typename T, std::size_t Row, std::size_t Col>
+Array2D<T, Row, Col> buildBoard()
+{
+    Array2D<char, 6, 7> board{{
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+    }};
+    return board;
+}
