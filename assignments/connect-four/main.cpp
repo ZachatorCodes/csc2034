@@ -10,6 +10,7 @@ template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr);
 
 void printGameInfo();
+void runGame();
 
 int main(int, char **)
 {
