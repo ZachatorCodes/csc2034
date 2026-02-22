@@ -11,7 +11,6 @@ void runGame();
 int main(int, char **)
 {
     std::array<std::array<char, 7>, 6> board = buildBoard();
-
     printGameInfo();
     print2DArray(board);
 }
