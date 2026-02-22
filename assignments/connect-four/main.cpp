@@ -24,6 +24,10 @@ int main(int, char **)
     print2DArray(board);
 }
 
+void runGame()
+{
+}
+
 // Template parameter function
 template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr)
@@ -47,10 +51,6 @@ void printGameInfo()
               << "Welcome to Connect 4!" << '\n'
               << "First play to CONNECT FOUR PIECES wins!" << '\n'
               << "------------------------------------" << std::endl;
-}
-
-void runGame()
-{
 }
 
 template <typename T, std::size_t Row, std::size_t Col>
