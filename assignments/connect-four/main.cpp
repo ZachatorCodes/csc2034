@@ -1,9 +1,13 @@
 #include <iostream>
 #include <array>
 
+// TEMPLATES
+
 // Template for 2D std::array (not C-style)
 template <typename T, std::size_t Row, std::size_t Col>
 using Array2D = std::array<std::array<T, Col>, Row>;
+
+// PROTOYPES
 
 // Prototype for function with template parameter and no return type
 template <typename T, std::size_t Row, std::size_t Col>
@@ -13,9 +17,11 @@ void print2DArray(const Array2D<T, Row, Col> &arr);
 template <typename T, std::size_t Row, std::size_t Col>
 Array2D<T, Row, Col> buildBoard();
 
+// Misc prototypes
 void printGameInfo();
 void runGame();
 
+// Main function
 int main(int, char **)
 {
     Array2D<char, 6, 7> board = buildBoard<char, 6, 7>();
@@ -24,11 +30,12 @@ int main(int, char **)
     print2DArray(board);
 }
 
+// Function to actually run the game
 void runGame()
 {
 }
 
-// Template parameter function
+// Template parameter function to print a 2D array of any type and size
 template <typename T, std::size_t Row, std::size_t Col>
 void print2DArray(const Array2D<T, Row, Col> &arr)
 {
@@ -45,6 +52,7 @@ void print2DArray(const Array2D<T, Row, Col> &arr)
     }
 }
 
+// Function to print game info
 void printGameInfo()
 {
     std::cout << "------------------------------------" << '\n'
@@ -53,6 +61,7 @@ void printGameInfo()
               << "------------------------------------" << std::endl;
 }
 
+// Template return value function to build a 6x7 2D array
 template <typename T, std::size_t Row, std::size_t Col>
 Array2D<T, Row, Col> buildBoard()
 {
