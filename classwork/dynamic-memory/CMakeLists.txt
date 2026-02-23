@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(dynamic-memory VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(dynamic-memory main.cpp)
+add_executable(dynamic-memory LinkedList.cpp)
 
