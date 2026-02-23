@@ -11,6 +11,7 @@ struct IArray
 {
     int *array;
     size_t size;
+    ~IArray() { delete[] array; } // Destructor to clean up dynamically allocated memory
 };
 
 int main(int, char **)
@@ -40,7 +41,7 @@ int main(int, char **)
     // delete[] arr4.array;
 
     int a = 8;
-    int* b = &a;
+    int *b = &a;
     int &c = *b;
     std::cout << "Address: " << b << std::endl;
     std::cout << "Pointer: " << *b << std::endl;
