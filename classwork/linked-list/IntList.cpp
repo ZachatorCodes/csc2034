@@ -6,8 +6,18 @@ IntList::Node::Node(int n) : data(n), next(nullptr), prev(nullptr)
     std::cout << "Creating node" << std::endl;
 };
 
+IntList::Node::~Node()
+{
+    std::cout << "Destroying node" << std::endl;
+}
+
 IntList::IntList() : head(nullptr), tail(nullptr), len(0)
 {
+}
+
+IntList::~IntList()
+{
+    clear();
 }
 
 void IntList::insert(int num)
@@ -38,4 +48,17 @@ void IntList::print() const
 int IntList::size() const
 {
     return len;
+}
+
+void IntList::clear()
+{
+    Node *cursor = head;
+    while (cursor)
+    {
+        Node *next = cursor->next;
+        delete cursor;
+        cursor = next;
+    }
+    head = tail = nullptr;
+    len = 0;
 }
