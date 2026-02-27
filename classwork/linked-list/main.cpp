@@ -3,13 +3,15 @@
 
 void test()
 {
-    IntList seq1, seq2;
+    IntList seq1;
 
     seq1.insert(10);
     seq1.insert(-2);
     seq1.insert(8);
 
     seq1.print();
+
+    IntList seq2 {seq1};
 }
 
 int main(int, char **)
