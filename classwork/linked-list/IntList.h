@@ -6,6 +6,7 @@ class IntList
         Node *next;
         Node *prev;
         Node(int d);
+        ~Node();
     };
     Node *head;
     Node *tail;
@@ -13,7 +14,9 @@ class IntList
 
 public:
     IntList();
+    ~IntList();
     void insert(int num);
     void print() const;
     int size() const;
+    void clear();
 };
