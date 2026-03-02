@@ -15,6 +15,8 @@ class IntList
 public:
     IntList();
     ~IntList();
+    // Copy Constructor
+    IntList(const IntList &other);
     void insert(int num);
     void print() const;
     int size() const;
