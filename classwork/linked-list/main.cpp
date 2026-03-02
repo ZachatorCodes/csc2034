@@ -8,9 +8,11 @@ void test()
     seq1.insert(10);
     seq1.insert(-2);
     seq1.insert(8);
-    seq1.print();
+    seq1.print();   
 
-    IntList seq2{seq1}; // SHALLOW COPY
+    IntList seq2{seq1}; // SHALLOW COPY (copy constructor)
+    IntList seq3;
+    seq3 = seq1; // SHALLOW COPY (assignment operator)
 
     seq2.print();
     seq2.insert(23);
