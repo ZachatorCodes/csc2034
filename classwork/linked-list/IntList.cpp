@@ -20,6 +20,15 @@ IntList::~IntList()
     clear();
 }
 
+// Copy Constructor
+IntList::IntList(const IntList &other) : IntList()
+{
+    for (auto cursor = other.head; cursor; cursor = cursor->next)
+    {
+        insert(cursor->data);
+    }
+}
+
 void IntList::insert(int num)
 {
     IntList::Node *newNode = new Node(num);
