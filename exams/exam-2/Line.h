@@ -12,9 +12,13 @@ public:
     Line();
     ~Line();                                      // destructor
     Line(const Line &other);                      // copy constructor
-    Line &operator=(const Line &other);           // assignment constructor
+    Line &operator=(Line &line);                  // assignment constructor
     Point *getPt1();                              // returns pointer to point 1
     Point *getPt2();                              // returns pointer to point 2
-    double calculateLength(Point *p1, Point *p2); // takes in two pointers to calculate length
-    double calculateSlope(Point *p1, Point *p2);  // takes in two pointers to calculate slope
+    double segmentLength(); // takes in two pointers to calculate length
+    double slope();  // takes in two pointers to calculate slope
+    friend std::ostream &operator<<(std::ostream &out, const Line &line);
+
+    // Did Not Finish:
+    // Point &operator+(Point p1, Point p2);
 };
