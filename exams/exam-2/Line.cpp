@@ -14,6 +14,17 @@ Line::~Line()
     delete pt2;
 }
 
+Line::Line(const Line &line)
+{
+    Line *newLine = new Line(line.pt1->getX(), line.pt1->getY(), line.pt2->getX(), line.pt2->getY());
+}
+
+Line &Line::operator=(Line &line)
+{
+    Line *newLine = new Line(line.pt1->getX(), line.pt1->getY(), line.pt2->getX(), line.pt2->getY());
+    return *newLine;
+}
+
 Point *Line::getPt1()
 {
     return pt1;
