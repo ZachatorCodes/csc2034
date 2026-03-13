@@ -8,3 +8,9 @@ Line::Line(int x1, int y1, int x2, int y2)
     pt2 = new Point{x2, y2};
 }
 
+Line::~Line()
+{
+    delete pt1;
+    delete pt2;
+}
+
