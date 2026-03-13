@@ -35,3 +35,15 @@ double Line::calculateLength(Point *point1, Point *point2)
 
     return length;
 }
+
+double Line::calculateSlope(Point *point1, Point *point2)
+{
+    int p1X = point1->getX();
+    int p1Y = point1->getY();
+    int p2X = point2->getX();
+    int p2Y = point2->getY();
+
+    double slope = ((p2Y - p1Y) / (p2X - p1X));
+
+    return slope;
+}
