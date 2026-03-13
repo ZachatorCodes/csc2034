@@ -24,3 +24,14 @@ Point *Line::getPt2()
     return pt2;
 }
 
+double Line::calculateLength(Point *point1, Point *point2)
+{
+    int p1X = point1->getX();
+    int p1Y = point1->getY();
+    int p2X = point2->getX();
+    int p2Y = point2->getY();
+
+    double length = std::sqrt(std::pow((p2X - p1X), 2.0) + (std::pow((p2Y - p1Y), 2.0)));
+
+    return length;
+}
