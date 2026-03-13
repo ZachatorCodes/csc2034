@@ -15,4 +15,5 @@ public:
     Point *getPt1();                              // returns pointer to point 1
     Point *getPt2();                              // returns pointer to point 2
     double calculateLength(Point *p1, Point *p2); // takes in two pointers to calculate length
+    double calculateSlope(Point *p1, Point *p2);  // takes in two pointers to calculate slope
 };
