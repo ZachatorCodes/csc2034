@@ -14,3 +14,13 @@ Line::~Line()
     delete pt2;
 }
 
+Point *Line::getPt1()
+{
+    return pt1;
+}
+
+Point *Line::getPt2()
+{
+    return pt2;
+}
+
