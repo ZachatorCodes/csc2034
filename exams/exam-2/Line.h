@@ -18,7 +18,5 @@ public:
     double segmentLength(); // takes in two pointers to calculate length
     double slope();  // takes in two pointers to calculate slope
     friend std::ostream &operator<<(std::ostream &out, const Line &line);
-
-    // Did Not Finish:
     Point &operator+(Point p);
 };
