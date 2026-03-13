@@ -70,5 +70,6 @@ std::ostream &operator<<(std::ostream &out, const Line &line)
 {
 }
 
-// Line Line::&operator+() {
-// }
+Point &operator+(Point p) {
+    
+}
