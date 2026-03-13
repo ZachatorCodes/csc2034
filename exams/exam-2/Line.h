@@ -20,5 +20,5 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Line &line);
 
     // Did Not Finish:
-    // Point &operator+(Point p1, Point p2);
+    Point &operator+(Point p);
 };
