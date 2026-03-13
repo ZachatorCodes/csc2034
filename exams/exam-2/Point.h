@@ -7,4 +7,8 @@ class Point {
 
 public:
     Point(int x, int y);
+    void setX(int val);
+    void setY(int val);
+    int getX();
+    int getY();
 };
