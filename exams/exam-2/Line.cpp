@@ -8,7 +8,8 @@ Line::Line(int x1, int y1, int x2, int y2)
     pt2 = new Point{x2, y2};
 }
 
-Line::Line() {
+Line::Line()
+{
     pt1 = new Point{0, 0};
     pt2 = new Point{0, 0};
 }
@@ -64,14 +65,10 @@ double Line::segmentLength()
     return length;
 }
 
-double Line::calculateSlope(Point *point1, Point *point2)
+// Did Not Finish:
+std::ostream &operator<<(std::ostream &out, const Line &line)
 {
-    int p1X = point1->getX();
-    int p1Y = point1->getY();
-    int p2X = point2->getX();
-    int p2Y = point2->getY();
-
-    double slope = ((p2Y - p1Y) / (p2X - p1X));
-
-    return slope;
 }
+
+// Line Line::&operator+() {
+// }
