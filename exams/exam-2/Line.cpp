@@ -65,7 +65,6 @@ double Line::segmentLength()
     return length;
 }
 
-// Did Not Finish:
 std::ostream &operator<<(std::ostream &out, const Line &line)
 {
 }
