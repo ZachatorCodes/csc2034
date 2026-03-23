@@ -11,7 +11,8 @@
 // Inventory is a pointer to a vector of pointers to cars | Car* (IS A POINTER)
 class Inventory
 {
-    std::vector<Car *> *cars;
+    // std::vector<Car *> *cars;
+    std::vector<Car *> *cars{nullptr}; // SAFER
 
 public:
     Inventory();  // constructor
