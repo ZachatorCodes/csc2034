@@ -14,5 +14,16 @@ class Inventory
     std::vector<Car *> *cars;
 
 public:
-    Inventory();
+    Inventory();  // constructor
+    ~Inventory(); // destructor
+
+    Inventory(Inventory &) = delete; // copy constructor (= delete means you cannot copy)
+    // Inventory(Inventory &); copy constructor
+
+    Inventory &operator=(Inventory &) = delete; // assignment overload (= delete means you cannot copy)
+    // Inventory &operator=(Inventory &); assignment overload
+
+    bool addToInventory(Car *car);
+    bool removeFromInventory(Car *car);
+    void clearInventory();
 };
