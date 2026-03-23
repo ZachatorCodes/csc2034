@@ -11,9 +11,10 @@ class Car
 private:
     std::string m_make; // member variable (m_XXX)
     std::string m_model;
-    std::string m_vin;
+    std::string m_vin; // a destructor would be needed if there is another level to the Car (std::string *m_vin)
 
 public:
+    // Destructor not needed, no second level of stuff
     Car();
     Car(std::string make, std::string model, std::string vin); // parameter names are optionals
     std::string getMake();
