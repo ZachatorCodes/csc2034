@@ -13,6 +13,7 @@ class Inventory
 {
     // std::vector<Car *> *cars;
     std::vector<Car *> *cars{nullptr}; // SAFER
+    // No need to do nullptr if cars isn't a pointer to a vector
 
 public:
     Inventory();  // constructor
