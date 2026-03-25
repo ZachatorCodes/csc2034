@@ -19,11 +19,15 @@ public:
     Inventory();  // constructor
     ~Inventory(); // destructor
 
-    Inventory(Inventory &) = delete; // copy constructor (= delete means you cannot copy)
-    // Inventory(Inventory &); copy constructor
+    // Inventory(Inventory &) = delete; // copy constructor (= delete means you cannot copy)
+    // Inventory(Inventory &) = default; // copy constructor used the default copy construct (which is the shallow copy)
+    Inventory(Inventory &); // copy constructor
 
-    Inventory &operator=(Inventory &) = delete; // assignment overload (= delete means you cannot copy)
+    // Inventory &operator=(Inventory &) = delete; // assignment overload (= delete means you cannot copy)
+    Inventory &operator=(Inventory &) = default; // assignment overload used the default copy construct (which is the shallow copy)
     // Inventory &operator=(Inventory &); assignment overload
+
+    friend std::ostream &operator<<(std::ostream &out, const Inventory *stock);
 
     bool addToInventory(Car *car);
     bool removeFromInventory(Car *car);
