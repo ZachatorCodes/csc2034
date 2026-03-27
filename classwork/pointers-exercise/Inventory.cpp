@@ -63,16 +63,26 @@ void Inventory::clearInventory()
     // Don't use an iterator and try to erase at the same time, it will miss the data
 
     // OPTION 2
-    auto it = cars->end(); // one after the last element
+    // auto it = cars->end(); // one after the last element
+    // it--;
+    // while (it != cars->begin())
+    // {
+    //     delete *it;
+    //     cars->erase(it);
+    //     it--;
+    // }
+    // delete *it;      // for first element
+    // cars->erase(it); // for first element
+
+    // Option 3;
+    auto it = cars->end();
     it--;
-    while (it != cars->begin())
+    while (!cars->empty())
     {
         delete *it;
-        cars->erase(it);
+        cars->pop_back();
         it--;
     }
-    delete *it;      // for first element
-    cars->erase(it); // for first element
 
     std::cout << "**Inventory Cleared**" << std::endl;
     std::cout << "Size of inventory: " << cars->size() << std::endl;
