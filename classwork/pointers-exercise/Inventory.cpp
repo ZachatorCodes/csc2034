@@ -20,7 +20,7 @@ Inventory::Inventory(Inventory& other) : Inventory()
 
 Inventory::~Inventory()
 {
-   clearInventory();
+    clearInventory();
 }
 
 bool Inventory::addToInventory(Car* car)
@@ -76,4 +76,20 @@ void Inventory::clearInventory()
 
     std::cout << "**Inventory Cleared**" << std::endl;
     std::cout << "Size of inventory: " << cars->size() << std::endl;
+}
+
+bool Inventory::removeFromInventory(Car* car)
+{
+    auto it = cars->begin();
+    while (it != cars->end())
+    {
+        if ((*it)->getVin() == car->getVin())
+        {
+            delete *it;
+            cars->erase(it);
+            return true;
+        }
+        it++;
+    }
+    return false;
 }
