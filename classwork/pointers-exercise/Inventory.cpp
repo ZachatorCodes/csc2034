@@ -49,3 +49,14 @@ std::ostream &operator<<(std::ostream &out, const Inventory *stock)
 
     return out;
 }
+
+void Inventory::clearInventory()
+{
+    auto it = cars->begin();
+    while (it != cars->end())
+    {
+        delete *it;
+        it++;
+    }
+    std::cout << "**Inventory Cleared**" << std::endl;
+}
