@@ -23,4 +23,6 @@ int main(int, char**)
 
     std::cout << dealerStock;
     std::cout << dealerStock2;
+
+    dealerStock->clearInventory();
 }
