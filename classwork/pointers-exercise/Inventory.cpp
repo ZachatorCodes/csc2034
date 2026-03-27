@@ -52,11 +52,36 @@ std::ostream& operator<<(std::ostream& out, const Inventory* stock)
 
 void Inventory::clearInventory()
 {
-    auto it = cars->begin();
-    while (it != cars->end())
+    // // OPTION 1
+    // auto it = cars->begin();
+
+    // // this deletes the car but keeps the pointer
+    // while (it != cars->end())
+    // {
+    //     delete *it;
+    //     it++;
+    // }
+
+    // // clears the array of pointers
+    // while (!cars->empty())
+    // {
+    //     cars->pop_back();
+    // }
+
+    // Don't use an iterator and try to erase at the same time, it will miss the data
+
+    // OPTION 2
+    auto it = cars->end(); // one after the last element
+    it--;
+    while (it != cars->begin())
     {
         delete *it;
-        it++;
+        cars->erase(it);
+        it--;
     }
+    delete *it;      // for first element
+    cars->erase(it); // for first element
+
     std::cout << "**Inventory Cleared**" << std::endl;
+    std::cout << "Size of inventory: " << cars->size() << std::endl;
 }
