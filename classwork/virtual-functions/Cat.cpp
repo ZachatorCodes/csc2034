@@ -9,3 +9,13 @@ double Cat::getWhiskerLength() const
 {
     return m_whiskerLength;
 }
+
+std::string Cat::makeSound()
+{
+    return "Meow Meow";
+}
+
+std::string Cat::makeProperSound()
+{
+    return "Mew Mew";
+}
