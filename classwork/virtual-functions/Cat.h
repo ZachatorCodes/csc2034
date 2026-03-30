@@ -1,6 +1,5 @@
 #pragma once
 #include "Animal.h"
-#include <string>
 
 class Cat : public Animal
 {
@@ -10,4 +9,5 @@ class Cat : public Animal
     Cat(std::string name, std::string color, double weight, double whiskerLength);
     double getWhiskerLength() const; // does not modify data, good habit for getters
     std::string makeSound();
+    std::string makeProperSound() override; // overrides virtual function
 };
