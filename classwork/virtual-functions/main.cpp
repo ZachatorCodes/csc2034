@@ -25,4 +25,6 @@ int main(int, char**)
     {
         std::cout << acat->getWhiskerLength() << std::endl;
     }
+
+    delete anim1; // this is a cat but calls the animal destructor
 }
