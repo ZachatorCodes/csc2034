@@ -10,4 +10,5 @@ class Animal
   public:
     Animal();
     Animal(std::string name, std::string color, double weight);
+    std::string makeSound();
 };
