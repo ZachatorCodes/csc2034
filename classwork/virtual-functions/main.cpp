@@ -19,4 +19,10 @@ int main(int, char**)
     std::cout << anim1->makeProperSound() << std::endl; // overrides
     std::cout << dynamic_cast<Cat*>(anim1)->getWhiskerLength() << std::endl;
 
+    // Example of equivalent of Java insanceof operator
+    Cat* acat = dynamic_cast<Cat*>(anim1);
+    if (acat != nullptr)
+    {
+        std::cout << acat->getWhiskerLength() << std::endl;
+    }
 }
