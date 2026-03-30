@@ -8,4 +8,5 @@ class Cat : public Animal
 
   public:
     Cat(std::string name, std::string color, double weight, double whiskerLength);
+    double getWhiskerLength() const; // does not modify data, good habit for getters
 };
