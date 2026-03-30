@@ -11,4 +11,5 @@ class Animal
     Animal();
     Animal(std::string name, std::string color, double weight);
     std::string makeSound();
+    virtual std::string makeProperSound(); // virtual means allowed to be overwritten by child classes
 };
