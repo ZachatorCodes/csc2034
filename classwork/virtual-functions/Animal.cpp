@@ -20,3 +20,8 @@ std::string Animal::makeProperSound()
 {
     return "Blah Blah";
 }
+
+Animal::~Animal()
+{
+    std::cout << "Animal Destructor Called" << std::endl;
+}
