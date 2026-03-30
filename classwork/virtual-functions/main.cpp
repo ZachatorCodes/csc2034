@@ -15,7 +15,7 @@ int main(int, char**)
     std::cout << dynamic_cast<Animal*>(cat1)->makeSound() << std::endl; // dynamic cast for pointers
 
     Animal* anim1 = cat1;
-    std::cout << anim1->makeSound() << std::endl; // uses type casting and uses parent method
+    std::cout << anim1->makeSound() << std::endl;       // uses type casting and uses parent method
     std::cout << anim1->makeProperSound() << std::endl; // overrides
     std::cout << dynamic_cast<Cat*>(anim1)->getWhiskerLength() << std::endl;
 
