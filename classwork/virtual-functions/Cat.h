@@ -1,7 +1,7 @@
 #pragma once
 #include "Animal.h"
 
-class Cat : public Animal
+class Cat : public Animal // extends
 {
     double m_whiskerLength{2.0}; // better way to initialize
 
