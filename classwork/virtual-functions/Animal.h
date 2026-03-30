@@ -5,7 +5,7 @@ class Animal
 {
     std::string m_name;
     std::string m_color;
-    double weight;
+    double m_weight;
 
   public:
     Animal();
