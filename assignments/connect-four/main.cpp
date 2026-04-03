@@ -32,7 +32,7 @@ void runGame(std::array<std::array<char, 7>, 6>& board)
         {
             gameOver = true;
             printBoard(board);
-            std::cout << "Player " << currentPlayer << " wins!" << std::endl;
+            std::cout << "Player " << (currentPlayer == 'R' ? '1' : '2') << " wins!" << std::endl;
         }
         else
         {
