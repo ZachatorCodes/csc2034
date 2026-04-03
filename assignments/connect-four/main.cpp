@@ -25,10 +25,34 @@ void runGame(std::array<std::array<char, 7>, 6>& board)
     bool gameOver = false;
     while (!gameOver)
     {
+        printBoard(board);
+        makeMove(board, currentPlayer);
+        if (checkWin(board, currentPlayer))
+        {
+            printBoard(board);
+            std::cout << "Player " << currentPlayer << " wins!" << std::endl;
+            gameOver = true;
+        }
+        else
+        {
+            // Switch player
+            if (currentPlayer == 'R')
+            {
+                currentPlayer = 'Y';
+            }
+            else
+            {
+                currentPlayer = 'R';
+            }
+        }
     }
 }
 
-bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char player)
+void makeMove(std::array<std::array<char, 7>, 6>& board, const char& player)
+{
+}
+
+bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& player)
 {
 }
 
