@@ -138,6 +138,32 @@ bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& playe
         }
     }
 
+    // check for positive slope wins
+    for (int row = 3; row < 6; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            if (board[row][col] == player && board[row - 1][col + 1] == player && board[row - 2][col + 2] == player &&
+                board[row - 3][col + 3] == player)
+            {
+                return true;
+            }
+        }
+    }
+
+    // check for negative slope wins
+    for (int row = 0; row < 3; row++)
+    {
+        for (int col = 0; col < 4; col++)
+        {
+            if (board[row][col] == player && board[row + 1][col + 1] == player && board[row + 2][col + 2] == player &&
+                board[row + 3][col + 3] == player)
+            {
+                return true;
+            }
+        }
+    }
+
     return false;
 }
 
@@ -159,7 +185,6 @@ void printBoard(const std::array<std::array<char, 7>, 6>& arr)
     }
 }
 
-//
 void buildBoard(std::array<std::array<char, 7>, 6>& board)
 {
     for (auto& row : board)
