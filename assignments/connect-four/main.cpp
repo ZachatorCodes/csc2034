@@ -81,7 +81,7 @@ void buildBoard(std::array<std::array<char, 7>, 6>& board)
     {
         for (auto& element : row)
         {
-            element = 'X';
+            element = ' ';
         }
     }
 }
