@@ -30,9 +30,9 @@ void runGame(std::array<std::array<char, 7>, 6>& board)
         makeMove(board, currentPlayer);
         if (checkWin(board, currentPlayer))
         {
+            gameOver = true;
             printBoard(board);
             std::cout << "Player " << currentPlayer << " wins!" << std::endl;
-            gameOver = true;
         }
         else
         {
