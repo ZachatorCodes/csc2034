@@ -1,5 +1,6 @@
 #include <array>
 #include <iostream>
+#include <limits>
 
 // PROTOYPES
 void printIntro();
@@ -50,10 +51,50 @@ void runGame(std::array<std::array<char, 7>, 6>& board)
 
 void makeMove(std::array<std::array<char, 7>, 6>& board, const char& player)
 {
+    int column;
+    bool goodMove = false;
+    while (!goodMove)
+    {
+        if (player == 'R')
+        {
+            std::cout << "Player 1 (R), enter your move (1-7): ";
+        }
+        else
+        {
+            std::cout << "Player 2 (Y), enter your move (1-7): ";
+        }
+        std::cin >> column;
+        if (std::cin.fail() || column < 1 || column > 7)
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input. Please enter a number between 1 and 7." << std::endl;
+        }
+        else
+        {
+            if (board[0][column - 1] != ' ')
+            {
+                std::cout << "Column is full. Please choose another column." << std::endl;
+            }
+            else
+            {
+                for (int row = 5; row >= 0; row--)
+                {
+                    if (board[row][column - 1] == ' ')
+                    {
+                        goodMove = true;
+                        board[row][column - 1] = player;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& player)
 {
+    return false;
 }
 
 // Template parameter function to print a 2D array of any type and size
