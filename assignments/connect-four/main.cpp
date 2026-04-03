@@ -46,3 +46,13 @@ void buildBoard(std::array<std::array<char, 7>, 6>& board)
         }
     }
 }
+
+void printIntro()
+{
+    std::cout << "Welcome to Connect 4!" << std::endl;
+    std::cout << "Player 1: R" << std::endl;
+    std::cout << "Player 2: Y" << std::endl;
+    std::cout << "To make a move, enter the column number (1-7) where you want to drop your piece." << std::endl;
+    std::cout << "The first player to connect four pieces in a row (horizontally, vertically, or diagonally) wins!"
+              << std::endl;
+}
