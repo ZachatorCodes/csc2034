@@ -84,7 +84,7 @@ void makeMove(std::array<std::array<char, 7>, 6>& board, const char& player)
                     {
                         goodMove = true;
                         board[row][column - 1] = player;
-                        break;
+                        break; // break otherwise entire column gets filled LOL
                     }
                 }
             }
