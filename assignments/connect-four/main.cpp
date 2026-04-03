@@ -14,7 +14,12 @@ int main(int, char**)
 {
     std::array<std::array<char, 7>, 6> board;
     buildBoard(board);
-    printBoard(board);
+
+    printIntro();
+}
+
+bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char player)
+{
 }
 
 // Template parameter function to print a 2D array of any type and size
