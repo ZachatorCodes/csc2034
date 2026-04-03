@@ -94,6 +94,29 @@ void makeMove(std::array<std::array<char, 7>, 6>& board, const char& player)
 
 bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& player)
 {
+    int count = 0;
+
+    // check horizontal win
+    for (int i = 0; i < 6; i++)
+    {
+        count = 0;
+        for (int j = 0; j < 7; j++)
+        {
+            if (board[i][j] == player)
+            {
+                count++;
+                if (count == 4)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                count = 0;
+            }
+        }
+    }
+
     return false;
 }
 
