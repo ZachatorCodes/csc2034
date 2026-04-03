@@ -26,6 +26,7 @@ void runGame(std::array<std::array<char, 7>, 6>& board)
     bool gameOver = false;
     while (!gameOver)
     {
+        std::cout << '\n';
         printBoard(board);
         makeMove(board, currentPlayer);
         if (checkWin(board, currentPlayer))
@@ -170,6 +171,7 @@ bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& playe
 // Template parameter function to print a 2D array of any type and size
 void printBoard(const std::array<std::array<char, 7>, 6>& arr)
 {
+    std::cout << "------------------------------------------------------" << '\n' << std::endl;
     int rowNum = 1;
     int colNum = 1;
     std::cout << "   " << "1 2 3 4 5 6 7" << std::endl;
@@ -183,6 +185,7 @@ void printBoard(const std::array<std::array<char, 7>, 6>& arr)
         std::cout << "|";
         std::cout << '\n';
     }
+    std::cout << std::endl;
 }
 
 void buildBoard(std::array<std::array<char, 7>, 6>& board)
@@ -198,9 +201,15 @@ void buildBoard(std::array<std::array<char, 7>, 6>& board)
 
 void printIntro()
 {
+    std::cout << '\n' << "------------------------------------------------------" << '\n' << std::endl;
+
     std::cout << "Welcome to Connect 4!" << std::endl;
+    std::cout << std::endl;
+
     std::cout << "Player 1: R" << std::endl;
     std::cout << "Player 2: Y" << std::endl;
+    std::cout << std::endl;
+
     std::cout << "To make a move, enter the column number (1-7) where you want to drop your piece." << std::endl;
     std::cout << "The first player to connect four pieces in a row (horizontally, vertically, or diagonally) wins!"
               << std::endl;
