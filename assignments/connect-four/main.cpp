@@ -97,12 +97,12 @@ bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& playe
     int count = 0;
 
     // check horizontal win
-    for (int i = 0; i < 6; i++)
+    for (int row = 0; row < 6; row++)
     {
         count = 0;
-        for (int j = 0; j < 7; j++)
+        for (int col = 0; col < 7; col++)
         {
-            if (board[i][j] == player)
+            if (board[row][col] == player)
             {
                 count++;
                 if (count == 4)
