@@ -117,6 +117,27 @@ bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& playe
         }
     }
 
+    // check vertical win
+    for (int col = 0; col < 7; col++)
+    {
+        count = 0;
+        for (int row = 0; row < 6; row++)
+        {
+            if (board[row][col] == player)
+            {
+                count++;
+                if (count == 4)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                count = 0;
+            }
+        }
+    }
+
     return false;
 }
 
