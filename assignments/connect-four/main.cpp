@@ -16,6 +16,16 @@ int main(int, char**)
     buildBoard(board);
 
     printIntro();
+    runGame(board);
+}
+
+void runGame(std::array<std::array<char, 7>, 6>& board)
+{
+    char currentPlayer = 'R';
+    bool gameOver = false;
+    while (!gameOver)
+    {
+    }
 }
 
 bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char player)
