@@ -2,8 +2,12 @@
 #include <iostream>
 
 // PROTOYPES
+void printIntro();
 void buildBoard(std::array<std::array<char, 7>, 6>& board);
 void printBoard(const std::array<std::array<char, 7>, 6>& arr);
+void runGame(std::array<std::array<char, 7>, 6>& board);
+void makeMove(std::array<std::array<char, 7>, 6>& board, const char& player);
+bool checkWin(const std::array<std::array<char, 7>, 6>& board, const char& player);
 
 // Main function
 int main(int, char**)
