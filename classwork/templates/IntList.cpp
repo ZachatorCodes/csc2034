@@ -1,27 +1,27 @@
 #include "IntList.h"
 #include <iostream>
 
-IntList::Node::Node(int n) : data(n), next(nullptr), prev(nullptr)
+template <typename T> IntList<T>::Node::Node(T d) : data(d), next(nullptr), prev(nullptr)
 {
     std::cout << "Creating node" << std::endl;
 };
 
-IntList::Node::~Node()
+template <typename T> IntList<T>::Node::~Node()
 {
     std::cout << "Destroying node" << std::endl;
 }
 
-IntList::IntList() : head(nullptr), tail(nullptr), len(0)
+template <typename T> IntList<T>::IntList() : head(nullptr), tail(nullptr), len(0)
 {
 }
 
-IntList::~IntList()
+template <typename T> IntList<T>::~IntList()
 {
     clear();
 }
 
 // Copy Constructor
-IntList::IntList(const IntList &other) : IntList()
+template <typename T> IntList<T>::IntList(const IntList& other) : IntList()
 {
     for (auto cursor = other.head; cursor; cursor = cursor->next)
     {
@@ -29,9 +29,9 @@ IntList::IntList(const IntList &other) : IntList()
     }
 }
 
-void IntList::insert(int num)
+template <typename T> void IntList<T>::insert(int num)
 {
-    IntList::Node *newNode = new Node(num);
+    IntList::Node* newNode = new Node(num);
     if (tail)
     {
         newNode->prev = tail;
@@ -45,7 +45,7 @@ void IntList::insert(int num)
     len++;
 }
 
-void IntList::print() const
+template <typename T> void IntList<T>::print() const
 {
     for (auto cursor = head; cursor; cursor = cursor->next)
     {
@@ -54,17 +54,17 @@ void IntList::print() const
     std::cout << '\n';
 }
 
-int IntList::size() const
+template <typename T> int IntList<T>::size() const
 {
     return len;
 }
 
-void IntList::clear()
+template <typename T> void IntList<T>::clear()
 {
-    Node *cursor = head;
+    Node* cursor = head;
     while (cursor)
     {
-        Node *next = cursor->next;
+        Node* next = cursor->next;
         delete cursor;
         cursor = next;
     }
