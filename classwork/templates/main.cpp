@@ -1,4 +1,5 @@
 #include "Calculator.h"
+#include "IntList.h"
 #include <iostream>
 
 // int add(int a, int b)
@@ -34,4 +35,10 @@ int main(int, char**)
 
     Calculator<int, double> intCalc;
     std::cout << intCalc.add(8, 2) << std::endl;
+
+    IntList<double> seq1;
+    seq1.insert(2.5);
+    seq1.insert(3.7);
+    seq1.insert(4.2);
+    seq1.print();
 }
