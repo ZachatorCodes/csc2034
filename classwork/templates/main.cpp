@@ -41,4 +41,7 @@ int main(int, char**)
     seq1.insert(3.7);
     seq1.insert(4.2);
     seq1.print();
+
+    IntList<Calculator<int, double>> seq2;
+    seq2.insert(intCalc);
 }
