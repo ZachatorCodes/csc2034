@@ -24,3 +24,5 @@ template <typename T> class IntList
     int size() const;
     void clear();
 };
+
+#include "IntList.tpp"

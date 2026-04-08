@@ -1,4 +1,3 @@
-#include "IntList.h"
 #include <iostream>
 
 template <typename T> IntList<T>::Node::Node(T d) : data(d), next(nullptr), prev(nullptr)
