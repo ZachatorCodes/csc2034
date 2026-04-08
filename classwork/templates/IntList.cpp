@@ -29,7 +29,7 @@ template <typename T> IntList<T>::IntList(const IntList& other) : IntList()
     }
 }
 
-template <typename T> void IntList<T>::insert(int num)
+template <typename T> void IntList<T>::insert(T num)
 {
     IntList::Node* newNode = new Node(num);
     if (tail)

@@ -19,7 +19,7 @@ template <typename T> class IntList
     // IntList(const IntList &other) = delete; DISABLE COPY CONSTRUCTOR
     IntList& operator=(const IntList& other); // Assignment Operator
     // IntList &operator=(const IntList &other) = delete; DISABLE ASSIGNMENT OPERATOR
-    void insert(int T);
+    void insert(T num);
     void print() const;
     int size() const;
     void clear();
