@@ -1,3 +1,4 @@
+#include "Calculator.h"
 #include <iostream>
 
 // int add(int a, int b)
@@ -30,4 +31,7 @@ int main(int, char**)
     std::cout << add(2, 3.7) << std::endl;
 
     std::cout << add(3.7, 2) << std::endl;
+
+    Calculator<int, double> intCalc;
+    std::cout << intCalc.add(8, 2) << std::endl;
 }
