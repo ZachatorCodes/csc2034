@@ -5,10 +5,10 @@
 #include <vector>
 
 // PROTOTYPES
-int readVotes(const std::string filepath, std::vector<std::vector<std::string>>& data);
+int readData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 
 // FUNCTION DEFINITIONS
-int readVotes(const std::string filepath, std::vector<std::vector<std::string>>& data)
+int readData(const std::string filepath, std::vector<std::vector<std::string>>& data)
 {
     // Replace "data.csv" with your file path
     std::string file_path = filepath;
@@ -58,5 +58,5 @@ int main(int, char**)
     std::string filepath = "../../../CandidateVotes.csv"; // original path to the CSV file
     std::vector<std::vector<std::string>> data;           // vector to store the read data
 
-    readVotes(filepath, data); // code runs in build directory, so path is relative to that
+    readData(filepath, data); // code runs in build directory, so path is relative to that
 }
