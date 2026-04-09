@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 
+// PROTOTYPES
+int readVotes(const std::string filepath, std::vector<std::vector<std::string>>& data);
+
+// FUNCTION DEFINITIONS
 int readVotes(const std::string filepath, std::vector<std::vector<std::string>>& data)
 {
     // Replace "data.csv" with your file path
