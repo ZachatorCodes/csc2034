@@ -51,6 +51,5 @@ int readVotes(std::string filepath)
 
 int main(int, char**)
 {
-    std::cout << "Hello, from ranked-choice-voting!\n";
-    readVotes("CandidateVotes.csv");
+    readVotes("../../../CandidateVotes.csv"); // code runs in build directory, so path is relative to that
 }
