@@ -51,7 +51,7 @@ int readVotes(const std::string filepath, std::vector<std::vector<std::string>>&
 
 int main(int, char**)
 {
-    std::string filepath = "../../../CandidateVotes.csv"; // Adjust the path as needed
+    std::string filepath = "../../../CandidateVotes.csv"; // original path to the CSV file
     std::vector<std::vector<std::string>> data;           // vector to store the read data
 
     readVotes(filepath, data); // code runs in build directory, so path is relative to that
