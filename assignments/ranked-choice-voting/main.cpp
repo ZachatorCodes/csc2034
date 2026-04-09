@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-int readVotes(std::string filepath)
+int readVotes(const std::string filepath, std::vector<std::vector<std::string>>& data)
 {
     // Replace "data.csv" with your file path
     std::string file_path = filepath;
@@ -17,7 +17,7 @@ int readVotes(std::string filepath)
     }
 
     std::string line;
-    std::vector<std::vector<std::string>> data; // 2D vector to store all data
+    data.clear(); // Clear the data vector before reading new data
 
     // Read each line from the file
     while (std::getline(file, line))
@@ -51,5 +51,8 @@ int readVotes(std::string filepath)
 
 int main(int, char**)
 {
-    readVotes("../../../CandidateVotes.csv"); // code runs in build directory, so path is relative to that
+    std::string filepath = "../../../CandidateVotes.csv"; // Adjust the path as needed
+    std::vector<std::vector<std::string>> data;           // vector to store the read data
+
+    readVotes(filepath, data); // code runs in build directory, so path is relative to that
 }
