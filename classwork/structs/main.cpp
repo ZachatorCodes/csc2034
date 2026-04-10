@@ -22,15 +22,22 @@ struct PID
 
 ID createID(std::string fname, std::string lname, unsigned long long sId, std::string animal);
 PID createPID(std::string fname, std::string lname, unsigned long long sId, std::string animal);
+std::tuple<std::string, std::string, std::string> getMeetingInfo();
 
-int main(int, char **)
+int main(int, char**)
 {
     std::cout << "Hello, from structs!\n";
     ID newId = createID("John", "Wick", 1234567, "Cat");
-    std::cout << "Name: " << newId.name.fname << " " << newId.name.lname << "\nSNum: " << newId.snumber << "\nFav Animal: " << newId.favAnimal << std::endl;
+    std::cout << "Name: " << newId.name.fname << " " << newId.name.lname << "\nSNum: " << newId.snumber
+              << "\nFav Animal: " << newId.favAnimal << std::endl;
 
     PID newPID = createPID("Wohn", "Jick", 1234567, "Dog");
-    std::cout << "Name: " << newPID.name.first << " " << newPID.name.second << "\nSNum: " << newPID.snumber << "\nFav Animal: " << newPID.favAnimal << std::endl;
+    std::cout << "Name: " << newPID.name.first << " " << newPID.name.second << "\nSNum: " << newPID.snumber
+              << "\nFav Animal: " << newPID.favAnimal << std::endl;
+
+    auto meetInfo = getMeetingInfo();
+    std::cout << "The meeting is in building " << std::get<0>(meetInfo) << " class " << std::get<1>(meetInfo) << " at "
+              << std::get<2>(meetInfo) << std::endl;
 }
 
 ID createID(std::string fname, std::string lname, unsigned long long sId, std::string animal)
