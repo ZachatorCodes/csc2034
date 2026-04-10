@@ -38,6 +38,9 @@ int main(int, char**)
     auto meetInfo = getMeetingInfo();
     std::cout << "The meeting is in building " << std::get<0>(meetInfo) << " class " << std::get<1>(meetInfo) << " at "
               << std::get<2>(meetInfo) << std::endl;
+
+    auto [bldg, cls, time] = getMeetingInfo();
+    std::cout << "The meeting is in building " << bldg << " class " << cls << " at " << time << std::endl;
 }
 
 ID createID(std::string fname, std::string lname, unsigned long long sId, std::string animal)
