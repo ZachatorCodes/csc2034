@@ -48,3 +48,11 @@ PID createPID(std::string fname, std::string lname, unsigned long long sId, std:
     PID id{name, sId, animal};
     return id;
 }
+
+std::tuple<std::string, std::string, std::string> getMeetingInfo()
+{
+    std::string buildingName{"Blanca Peak"};
+    std::string className{"BP112"};
+    std::string time{"12:00pm"};
+    return {buildingName, className, time};
+}
