@@ -6,7 +6,7 @@
 
 // PROTOTYPES
 int readData(const std::string filepath, std::vector<std::vector<std::string>>& data);
-int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data, int iteration);
+int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 
 // FUNCTION DEFINITIONS
 int readData(const std::string filepath, std::vector<std::vector<std::string>>& data)
@@ -54,8 +54,11 @@ int readData(const std::string filepath, std::vector<std::vector<std::string>>& 
     return 0;
 }
 
-int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data, int iteration)
+int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data)
 {
+    int arraySize = data[0].size();      // Get the number of candidates from the header row
+    int candidateVotes[arraySize] = {0}; // array to store the vote counts for each candidate
+
     std::ofstream file(filepath); // open the file in output mode
 
     // check if the file was opened successfully
@@ -66,7 +69,6 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     }
 
     // Write the header for the file
-    file << "Canidates,";
     for (int i = 0; i < data[0].size(); i++)
     {
         if (i == data[0].size() - 1)
@@ -76,6 +78,29 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
         else
         {
             file << data[0][i] << ',';
+        }
+    }
+
+    for (int row = 1; row < data.size(); row++)
+    {
+        for (int col = 0; col < data[row].size(); col++)
+        {
+            if (data[row][col] == "5")
+            {
+                candidateVotes[col]++; // Increment the vote count for the candidate
+            }
+        }
+    }
+
+    for (int i = 0; i < arraySize; i++)
+    {
+        if (i == arraySize - 1)
+        {
+            file << candidateVotes[i] << '\n'; // Write the vote count for the last candidate
+        }
+        else
+        {
+            file << candidateVotes[i] << ','; // Write the vote count for the current candidate followed by a comma
         }
     }
 
@@ -91,5 +116,5 @@ int main(int, char**)
     std::vector<std::vector<std::string>> data;               // vector to store the read data
 
     readData(initialVotes, data); // code runs in build directory, so path is relative to that
-    writeData(results, data, 0);
+    writeData(results, data);
 }
