@@ -80,6 +80,14 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
     {
         int rankTally[numOfCandidates] = {0};
         tallyVotes(rankTally, data);
+
+        std::cout << "Candidate vote counts: ";
+        for (int i = 0; i < numOfCandidates; i++)
+        {
+            std::cout << "Candidate " << i + 1 << ": " << rankTally[i] << " | ";
+        }
+        std::cout << std::endl;
+
         writeData(file, rankTally, numOfCandidates);
 
         for (int i = 0; i < numOfCandidates; i++)
