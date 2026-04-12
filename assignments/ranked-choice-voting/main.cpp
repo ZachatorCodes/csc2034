@@ -59,6 +59,7 @@ bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& d
 
     while (!winner)
     {
+        tallyVotes(rankTally, data);
         for (int i = 0; i < numOfCandidates; i++)
         {
             if (rankTally[i] / totalVotes > 0.5)
