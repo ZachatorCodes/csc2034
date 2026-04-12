@@ -140,7 +140,6 @@ int writeData(std::ofstream& file, const std::vector<std::vector<std::string>>& 
         }
     }
 
-    // close the file
     return 0;
 }
 
