@@ -108,7 +108,7 @@ void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& dat
     }
 }
 
-int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data)
+int writeData(std::ofstream& file, const std::vector<std::vector<std::string>>& data)
 {
     int arraySize = data[0].size();      // Get the number of candidates from the header row
     int candidateVotes[arraySize] = {0}; // array to store the vote counts for each candidate
