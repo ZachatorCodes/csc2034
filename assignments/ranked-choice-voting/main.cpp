@@ -153,8 +153,8 @@ int main(int, char**)
     readInitialVoteData(CANDIDATE_VOTES_CSV, data); // store initial data into the vector of vectors
 
     // Create an array to store the talley for all votes
-    int arraySize = data[0].size();
-    int rankTally[arraySize] = {0};
+    int numOfCandidates = data[0].size();
+    int rankTally[numOfCandidates] = {0};
 
-    bool winner = runAlgorithm(rankTally, data);
+    bool winner = runAlgorithm(rankTally, data, numOfCandidates);
 }
