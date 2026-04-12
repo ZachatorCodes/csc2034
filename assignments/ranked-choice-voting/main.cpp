@@ -124,6 +124,34 @@ void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidat
     }
 }
 
+int writeResultHeader(const std::string filepath, const std::vector<std::vector<std::string>>& data)
+{
+    std::ofstream file(filepath); // open the file in output mode
+
+    // check if the file was opened successfully
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file" << std::endl;
+        return 1;
+    }
+
+    for (int i = 0; i < data[0].size(); i++)
+    {
+        if (i == data[0].size() - 1)
+        {
+            file << data[0][i] << '\n';
+        }
+        else
+        {
+            file << data[0][i] << ',';
+        }
+    }
+
+    file.close();
+
+    return 0;
+}
+
 int main(int, char**)
 {
     // Get initial data from the csv file and store it into a vector of vectors
