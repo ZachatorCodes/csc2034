@@ -50,9 +50,6 @@ int readInitialVoteData(const std::string filepath, std::vector<std::vector<std:
 
 bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
 {
-    bool winner = false;
-    int loserCandidate = -1;
-    double totalVotes = data.size() - 1;
     const std::string ELECTION_RESULTS_CSV = "../../../ElectionResults.csv";
     std::ofstream file(ELECTION_RESULTS_CSV); // Open the file in input mode
 
