@@ -126,8 +126,9 @@ void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidat
 
 int main(int, char**)
 {
-    std::string initialVotes = "../../../CandidateVotes.csv"; // original path to the CSV file
-    std::string results = "../../../ElectionResults.csv";     // file path for tallied results
+    // Get initial data from the csv file and store it into a vector of vectors
+    std::string initialVotes = "../../../CandidateVotes.csv"; // initial candidate votes (cd out of build directory)
+    std::string results = "../../../ElectionResults.csv";     // output file (cd out of build directory)
     std::vector<std::vector<std::string>> data;               // vector to store the read data
 
     readData(initialVotes, data); // code runs in build directory, so path is relative to that
