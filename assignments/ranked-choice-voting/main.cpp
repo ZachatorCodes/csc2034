@@ -50,7 +50,7 @@ int readInitialVoteData(const std::string filepath, std::vector<std::vector<std:
     return 0;
 }
 
-bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& data)
+bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& data, int numOfCandidates)
 {
     bool winner = false;
     while (!winner)
