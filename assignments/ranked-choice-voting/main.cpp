@@ -152,9 +152,5 @@ int main(int, char**)
     std::vector<std::vector<std::string>> data;     // vector to store voting data
     readInitialVoteData(CANDIDATE_VOTES_CSV, data); // store initial data into the vector of vectors
 
-    // Create an array to store the talley for all votes
-    int numOfCandidates = data[0].size();
-    int rankTally[numOfCandidates] = {0};
-
-    bool winner = runAlgorithm(rankTally, data, numOfCandidates);
+    bool winner = runAlgorithm(data);
 }
