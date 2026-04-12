@@ -8,7 +8,7 @@
 
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
-void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes);
+void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,7 +104,7 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     return 0;
 }
 
-void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes)
+void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data)
 {
     for (int row = 1; row < data.size(); row++)
     {
@@ -112,7 +112,7 @@ void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidat
         {
             if (data[row][col] == "5")
             {
-                candidateVotes[col]++;
+                rankTally[col]++;
             }
         }
     }
