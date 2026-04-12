@@ -154,11 +154,13 @@ int writeResultHeader(const std::string filepath, const std::vector<std::vector<
 
 int main(int, char**)
 {
-    // Get initial data from the csv file and store it into a vector of vectors
-    std::string initialVotes = "../../../CandidateVotes.csv"; // initial candidate votes (cd out of build directory)
-    std::string results = "../../../ElectionResults.csv";     // output file (cd out of build directory)
-    std::vector<std::vector<std::string>> data;               // vector to store the read data
-    readInitialVoteData(initialVotes, data);
+    // CSV FILE PATHS
+    const std::string CANDIDATE_VOTES_CSV = "../../../CandidateVotes.csv";
+    const std::string ELECTION_RESULTS_CSV = "../../../ElectionResults.csv";
+
+    std::vector<std::vector<std::string>> data;     // vector to store voting data
+    readInitialVoteData(CANDIDATE_VOTES_CSV, data); // store initial data into the vector of vectors
+    writeResultHeader(ELECTION_RESULTS_CSV, data);  // write the header for the results file
 
     // Create an array to store the talley for all votes
     int arraySize = data[0].size();
