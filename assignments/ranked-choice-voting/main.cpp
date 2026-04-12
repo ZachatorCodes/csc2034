@@ -7,7 +7,7 @@
 // PROTOTYPES ///////////////////////////////////////////////////////////////////////
 
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
-bool runAlgorithm(const std::vector<std::vector<std::string>>& data);
+bool runAlgorithm(std::vector<std::vector<std::string>>& data);
 void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data);
 int writeData(std::ofstream& file, const int* rankTally, int numOfCandidates);
 
@@ -48,7 +48,7 @@ int readInitialVoteData(const std::string filepath, std::vector<std::vector<std:
     return 0;
 }
 
-bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
+bool runAlgorithm(std::vector<std::vector<std::string>>& data)
 {
     const std::string ELECTION_RESULTS_CSV = "../../../ElectionResults.csv";
     std::ofstream file(ELECTION_RESULTS_CSV); // Open the file in input mode
@@ -99,18 +99,33 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
             }
         }
 
-        int minVotes;
-        for (int i = 0; i < numOfCandidates; i++)
+        int minVoteCandidateIndex = 0;
+        for (int i = 1; i < numOfCandidates; i++)
         {
-            if (i == 0)
+            if (rankTally[i] < rankTally[minVoteCandidateIndex])
             {
-                minVotes = rankTally[i];
-            }
-            else if (rankTally[i] < minVotes)
-            {
-                minVotes = rankTally[i];
+                minVoteCandidateIndex = i;
             }
         }
+
+        // Note, make it adjust based on original vote
+        for (int row = 1; row < data.size(); row++)
+        {
+            for (int col = 0; col < data[row].size(); col++)
+            {
+                if (data[row][col] == "1" && col == minVoteCandidateIndex)
+                {
+                    for (int i = 0; i < data[row][col].size(); i++)
+                    {
+                        int rankInt = std::stoi(data[row][col]);
+                        rankInt--;
+                        std::string newRankStr = std::to_string(rankInt);
+                        data[row][col] = newRankStr;
+                    }
+                }
+            }
+        }
+        tallyVotes(rankTally, data);
     }
 
     file.close();
@@ -123,7 +138,7 @@ void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& dat
     {
         for (int col = 0; col < data[row].size(); col++)
         {
-            if (data[row][col] == "5")
+            if (data[row][col] == "1")
             {
                 rankTally[col]++;
             }
