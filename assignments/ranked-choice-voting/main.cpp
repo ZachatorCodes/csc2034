@@ -109,6 +109,20 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     return 0;
 }
 
+void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes)
+{
+    for (int row = 1; row < data.size(); row++)
+    {
+        for (int col = 0; col < data[row].size(); col++)
+        {
+            if (data[row][col] == "5")
+            {
+                candidateVotes[col]++;
+            }
+        }
+    }
+}
+
 int main(int, char**)
 {
     std::string initialVotes = "../../../CandidateVotes.csv"; // original path to the CSV file
