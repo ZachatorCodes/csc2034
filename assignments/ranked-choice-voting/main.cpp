@@ -91,6 +91,7 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
         }
     }
 
+    file.close();
     return winner;
 }
 
