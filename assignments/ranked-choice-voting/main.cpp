@@ -110,33 +110,17 @@ void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& dat
     }
 }
 
-int writeData(std::ofstream& file, const std::vector<std::vector<std::string>>& data)
+int writeData(std::ofstream& file, const int* rankTally, int numOfCandidates)
 {
-    int arraySize = data[0].size();      // Get the number of candidates from the header row
-    int candidateVotes[arraySize] = {0}; // array to store the vote counts for each candidate
-
-    // check if the file was opened successfully
-
-    for (int row = 1; row < data.size(); row++)
+    for (int i = 0; i < numOfCandidates; i++)
     {
-        for (int col = 0; col < data[row].size(); col++)
+        if (i == numOfCandidates - 1)
         {
-            if (data[row][col] == "5")
-            {
-                candidateVotes[col]++; // Increment the vote count for the candidate
-            }
-        }
-    }
-
-    for (int i = 0; i < arraySize; i++)
-    {
-        if (i == arraySize - 1)
-        {
-            file << candidateVotes[i] << '\n'; // Write the vote count for the last candidate
+            file << rankTally[i] << '\n'; // Write the vote count for the last candidate
         }
         else
         {
-            file << candidateVotes[i] << ','; // Write the vote count for the current candidate followed by a comma
+            file << rankTally[i] << ','; // Write the vote count for the current candidate followed by a comma
         }
     }
 
