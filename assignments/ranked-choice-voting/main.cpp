@@ -98,6 +98,19 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
                 break;
             }
         }
+
+        int minVotes;
+        for (int i = 0; i < numOfCandidates; i++)
+        {
+            if (i == 0)
+            {
+                minVotes = rankTally[i];
+            }
+            else if (rankTally[i] < minVotes)
+            {
+                minVotes = rankTally[i];
+            }
+        }
     }
 
     file.close();
