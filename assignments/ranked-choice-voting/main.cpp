@@ -4,12 +4,16 @@
 #include <string>
 #include <vector>
 
-// PROTOTYPES
+// PROTOTYPES ///////////////////////////////////////////////////////////////////////
+
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes);
 
-// FUNCTION DEFINITIONS
+////////////////////////////////////////////////////////////////////////////////////
+
+// FUNCTION DEFINITIONS ///////////////////////////////////////////////////////////////////////
+
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data)
 {
     // Replace "data.csv" with your file path
@@ -123,6 +127,8 @@ void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidat
         }
     }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 int main(int, char**)
 {
