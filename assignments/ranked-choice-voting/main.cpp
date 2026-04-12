@@ -80,7 +80,10 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
     bool winner = false;
     while (!winner)
     {
+        int rankTally[numOfCandidates] = {0};
         tallyVotes(rankTally, data);
+        writeData(file, data);
+
         for (int i = 0; i < numOfCandidates; i++)
         {
             if (rankTally[i] / totalVotes > 0.5)
