@@ -8,7 +8,6 @@
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes);
-int writeResultHeader(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 
 // FUNCTION DEFINITIONS
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data)
@@ -125,34 +124,6 @@ void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidat
     }
 }
 
-int writeResultHeader(const std::string filepath, const std::vector<std::vector<std::string>>& data)
-{
-    std::ofstream file(filepath); // open the file in output mode
-
-    // check if the file was opened successfully
-    if (!file.is_open())
-    {
-        std::cerr << "Error opening file" << std::endl;
-        return 1;
-    }
-
-    for (int i = 0; i < data[0].size(); i++)
-    {
-        if (i == data[0].size() - 1)
-        {
-            file << data[0][i] << '\n';
-        }
-        else
-        {
-            file << data[0][i] << ',';
-        }
-    }
-
-    file.close();
-
-    return 0;
-}
-
 int main(int, char**)
 {
     // CSV FILE PATHS
@@ -161,7 +132,6 @@ int main(int, char**)
 
     std::vector<std::vector<std::string>> data;     // vector to store voting data
     readInitialVoteData(CANDIDATE_VOTES_CSV, data); // store initial data into the vector of vectors
-    writeResultHeader(ELECTION_RESULTS_CSV, data);  // write the header for the results file
 
     // Create an array to store the talley for all votes
     int arraySize = data[0].size();
