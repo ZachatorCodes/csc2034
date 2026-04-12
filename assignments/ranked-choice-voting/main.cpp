@@ -53,6 +53,10 @@ int readInitialVoteData(const std::string filepath, std::vector<std::vector<std:
 bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& data, int numOfCandidates)
 {
     bool winner = false;
+    int loserCandidate = -1;
+    double totalVotes = data.size() - 1;
+    const std::string ELECTION_RESULTS_CSV = "../../../ElectionResults.csv";
+
     while (!winner)
     {
         tallyVotes(rankTally, data);
