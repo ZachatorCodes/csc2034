@@ -118,6 +118,15 @@ void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& dat
     }
 }
 
+bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& data)
+{
+    bool winner = false;
+    while (!winner)
+    {
+        tallyVotes(rankTally, data);
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 int main(int, char**)
