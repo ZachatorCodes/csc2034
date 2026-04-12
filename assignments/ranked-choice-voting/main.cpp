@@ -59,6 +59,7 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
         return false;
     }
 
+    // Add candidate names to the first row of the output file
     for (int i = 0; i < data[0].size(); i++)
     {
         if (i == data[0].size() - 1)
@@ -71,8 +72,8 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
         }
     }
 
-    int numOfCandidates = data[0].size();
-    double totalVotes = data.size() - 1;
+    const int numOfCandidates = data[0].size();
+    const double totalVotes = data.size() - 1;
 
     bool winner = false;
     while (!winner)
