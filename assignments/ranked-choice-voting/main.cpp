@@ -60,6 +60,20 @@ bool runAlgorithm(int* rankTally, const std::vector<std::vector<std::string>>& d
     return winner;
 }
 
+void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data)
+{
+    for (int row = 1; row < data.size(); row++)
+    {
+        for (int col = 0; col < data[row].size(); col++)
+        {
+            if (data[row][col] == "5")
+            {
+                rankTally[col]++;
+            }
+        }
+    }
+}
+
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data)
 {
     int arraySize = data[0].size();      // Get the number of candidates from the header row
@@ -113,20 +127,6 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     // close the file
     file.close();
     return 0;
-}
-
-void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data)
-{
-    for (int row = 1; row < data.size(); row++)
-    {
-        for (int col = 0; col < data[row].size(); col++)
-        {
-            if (data[row][col] == "5")
-            {
-                rankTally[col]++;
-            }
-        }
-    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
