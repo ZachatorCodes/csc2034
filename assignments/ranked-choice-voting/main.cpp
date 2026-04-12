@@ -7,6 +7,7 @@
 // PROTOTYPES
 int readData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
+void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes);
 
 // FUNCTION DEFINITIONS
 int readData(const std::string filepath, std::vector<std::vector<std::string>>& data)
