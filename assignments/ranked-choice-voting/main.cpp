@@ -9,7 +9,7 @@
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 bool runAlgorithm(const std::vector<std::vector<std::string>>& data);
 void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data);
-int writeData(std::ofstream& file, const std::vector<std::vector<std::string>>& data);
+int writeData(std::ofstream& file, const int* rankTally, int numOfCandidates);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
