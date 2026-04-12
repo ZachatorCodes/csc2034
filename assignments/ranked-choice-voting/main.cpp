@@ -46,16 +46,6 @@ int readInitialVoteData(const std::string filepath, std::vector<std::vector<std:
 
     file.close(); // Close the file
 
-    // Optional: Print the read data to verify
-    // for (const auto& row : data)
-    // {
-    //     for (const auto& field : row)
-    //     {
-    //         std::cout << field << "\t";
-    //     }
-    //     std::cout << std::endl;
-    // }
-
     return 0;
 }
 
