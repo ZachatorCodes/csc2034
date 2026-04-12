@@ -8,6 +8,7 @@
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 int writeData(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 void tallyVotes(const std::vector<std::vector<std::string>>& data, int* candidateVotes);
+int writeResultHeader(const std::string filepath, const std::vector<std::vector<std::string>>& data);
 
 // FUNCTION DEFINITIONS
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data)
