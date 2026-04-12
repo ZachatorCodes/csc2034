@@ -17,13 +17,11 @@ int writeData(std::ofstream& file, const std::vector<std::vector<std::string>>& 
 
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data)
 {
-    // Replace "data.csv" with your file path
-    std::string file_path = filepath;
-    std::ifstream file(file_path); // Open the file in input mode
+    std::ifstream file(filepath); // Open the file in input mode
 
     if (!file.is_open())
     {
-        std::cerr << "Error: Could not open the file " << file_path << std::endl;
+        std::cerr << "Error: Could not open the file " << filepath << std::endl;
         return 1;
     }
 
