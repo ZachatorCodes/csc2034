@@ -54,7 +54,30 @@ bool runAlgorithm(const std::vector<std::vector<std::string>>& data)
     int loserCandidate = -1;
     double totalVotes = data.size() - 1;
     const std::string ELECTION_RESULTS_CSV = "../../../ElectionResults.csv";
+    std::ofstream file(ELECTION_RESULTS_CSV); // Open the file in input mode
 
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file" << std::endl;
+        return false;
+    }
+
+    for (int i = 0; i < data[0].size(); i++)
+    {
+        if (i == data[0].size() - 1)
+        {
+            file << data[0][i] << '\n';
+        }
+        else
+        {
+            file << data[0][i] << ',';
+        }
+    }
+
+    int numOfCandidates = data[0].size();
+    double totalVotes = data.size() - 1;
+
+    bool winner = false;
     while (!winner)
     {
         tallyVotes(rankTally, data);
@@ -90,27 +113,7 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     int arraySize = data[0].size();      // Get the number of candidates from the header row
     int candidateVotes[arraySize] = {0}; // array to store the vote counts for each candidate
 
-    std::ofstream file(filepath); // open the file in output mode
-
     // check if the file was opened successfully
-    if (!file.is_open())
-    {
-        std::cerr << "Error opening file" << std::endl;
-        return 1;
-    }
-
-    // Write the header for the file
-    for (int i = 0; i < data[0].size(); i++)
-    {
-        if (i == data[0].size() - 1)
-        {
-            file << data[0][i] << '\n';
-        }
-        else
-        {
-            file << data[0][i] << ',';
-        }
-    }
 
     for (int row = 1; row < data.size(); row++)
     {
@@ -136,7 +139,6 @@ int writeData(const std::string filepath, const std::vector<std::vector<std::str
     }
 
     // close the file
-    file.close();
     return 0;
 }
 
