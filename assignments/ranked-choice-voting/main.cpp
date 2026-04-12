@@ -141,6 +141,7 @@ int main(int, char**)
 
     // Create an array to store the talley for all votes
     int arraySize = data[0].size();
-    int candidateVotes[arraySize] = {0};
-    tallyVotes(data, candidateVotes);
+    int rankTally[arraySize] = {0};
+
+    bool winner = runAlgorithm(rankTally, data);
 }
