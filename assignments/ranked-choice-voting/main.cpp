@@ -8,8 +8,8 @@
 
 int readInitialVoteData(const std::string filepath, std::vector<std::vector<std::string>>& data);
 bool runAlgorithm(std::vector<std::vector<std::string>>& data);
-void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data);
-int writeData(std::ofstream& file, const int* rankTally, int numOfCandidates);
+void tallyVotes(std::vector<int>& rankTally, const std::vector<std::vector<std::string>>& data);
+int writeData(std::ofstream& file, const std::vector<int>& rankTally);
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,23 +72,23 @@ bool runAlgorithm(std::vector<std::vector<std::string>>& data)
         }
     }
 
-    const int numOfCandidates = data[0].size();
     const double totalVotes = data.size() - 1;
 
     bool winner = false;
     while (!winner)
     {
-        int rankTally[numOfCandidates] = {0};
+        int numOfCandidates = data[0].size();
+        std::vector<int> rankTally(numOfCandidates, 0);
         tallyVotes(rankTally, data);
 
         std::cout << "Candidate vote counts: ";
         for (int i = 0; i < numOfCandidates; i++)
         {
-            std::cout << "Candidate " << i + 1 << ": " << rankTally[i] << " | ";
+            std::cout << data[0][i] << ": " << rankTally[i] << " | ";
         }
         std::cout << std::endl;
 
-        writeData(file, rankTally, numOfCandidates);
+        writeData(file, rankTally);
 
         for (int i = 0; i < numOfCandidates; i++)
         {
@@ -108,32 +108,40 @@ bool runAlgorithm(std::vector<std::vector<std::string>>& data)
             }
         }
 
-        // Note, make it adjust based on original vote
+        // Adjust ranks: shift down for eliminated candidate, remove their column
         for (int row = 1; row < data.size(); row++)
         {
+            // For all candidates ranked lower than eliminated one, decrease their rank by 1
             for (int col = 0; col < data[row].size(); col++)
             {
-                if (data[row][col] == "1" && col == minVoteCandidateIndex)
+                if (col != minVoteCandidateIndex)
                 {
-                    for (int i = 0; i < data[row][col].size(); i++)
+                    int rankInt = std::stoi(data[row][col]);
+                    if (rankInt > std::stoi(data[row][minVoteCandidateIndex]))
                     {
-                        int rankInt = std::stoi(data[row][col]);
                         rankInt--;
-                        std::string newRankStr = std::to_string(rankInt);
-                        data[row][col] = newRankStr;
+                        data[row][col] = std::to_string(rankInt);
                     }
                 }
             }
         }
-        tallyVotes(rankTally, data);
+
+        // Remove the eliminated candidate's column from all rows
+        for (int row = 0; row < data.size(); row++)
+        {
+            data[row].erase(data[row].begin() + minVoteCandidateIndex);
+        }
     }
 
     file.close();
     return winner;
 }
 
-void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& data)
+void tallyVotes(std::vector<int>& rankTally, const std::vector<std::vector<std::string>>& data)
 {
+    // Reset tally counts to 0
+    std::fill(rankTally.begin(), rankTally.end(), 0);
+
     for (int row = 1; row < data.size(); row++)
     {
         for (int col = 0; col < data[row].size(); col++)
@@ -146,11 +154,11 @@ void tallyVotes(int* rankTally, const std::vector<std::vector<std::string>>& dat
     }
 }
 
-int writeData(std::ofstream& file, const int* rankTally, int numOfCandidates)
+int writeData(std::ofstream& file, const std::vector<int>& rankTally)
 {
-    for (int i = 0; i < numOfCandidates; i++)
+    for (int i = 0; i < rankTally.size(); i++)
     {
-        if (i == numOfCandidates - 1)
+        if (i == rankTally.size() - 1)
         {
             file << rankTally[i] << '\n'; // Write the vote count for the last candidate
         }
