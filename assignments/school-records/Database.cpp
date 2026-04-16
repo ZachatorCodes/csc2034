@@ -5,4 +5,5 @@
 
 Database::Database()
 {
-}
+    std::ofstream file("../../../" + m_filePath);
+};
