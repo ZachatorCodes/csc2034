@@ -1,5 +1,7 @@
+#include "Database.h"
 #include <iostream>
 
-int main(int, char**){
-    std::cout << "Hello, from SchoolRecords!\n";
+int main(int, char**)
+{
+    Database* database = new Database();
 }
