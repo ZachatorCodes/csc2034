@@ -25,3 +25,10 @@ void Person::setAddress(Address* addy)
 {
     m_addr = addy;
 }
+
+std::ostream& operator<<(std::ostream& out, Person person)
+{
+    out << person.m_name << ", " << person.m_addr->getStreet() << ", " << person.m_addr->getCity() << ", "
+        << person.m_addr->getState();
+    return out;
+}
