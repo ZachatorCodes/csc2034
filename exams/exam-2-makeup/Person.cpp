@@ -8,6 +8,7 @@ Person::Person(std::string name)
 
 std::string Person::getName()
 {
+    return m_name;
 }
 
 Address Person::getAddress()
