@@ -10,5 +10,5 @@ class Person
 
   public:
     Person(std::string name);
-    void setAddress(Address addy);
+    void setAddress(Address* addy);
 };
