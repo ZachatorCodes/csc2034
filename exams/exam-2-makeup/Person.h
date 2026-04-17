@@ -9,4 +9,5 @@ class Person
     Address* m_addr;
 
   public:
+    Person(std::string name);
 };
