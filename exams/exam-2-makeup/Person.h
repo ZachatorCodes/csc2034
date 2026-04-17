@@ -21,6 +21,12 @@ class Person
     // Destructors
     ~Person();
 
+    // Copy Constructor
+    Person(Person& other);
+
+    // Assignment Overload
+    Person& operator=(Person& other);
+
     // Getters
     Address& getAddress();
     std::string getName();
