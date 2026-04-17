@@ -6,6 +6,11 @@ Person::Person(std::string name)
     m_name = name;
 }
 
+Person::~Person()
+{
+    delete m_addr;
+}
+
 std::string Person::getName()
 {
     return m_name;
