@@ -9,4 +9,5 @@ class Address
     std::string m_state;
 
   public:
+    Address(std::string street, std::string city, std::string state);
 };
