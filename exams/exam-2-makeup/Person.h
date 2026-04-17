@@ -22,7 +22,7 @@ class Person
     ~Person();
 
     // Getters
-    Address getAddress();
+    Address& getAddress();
     std::string getName();
 
     // Setters
