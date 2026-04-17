@@ -6,12 +6,6 @@ Person::Person(std::string name)
     m_name = name;
 }
 
-Person::Person(std::string name, Address* addy)
-{
-    m_name = name;
-    m_addr = new Address(addy->getCity(), addy->getCity(), addy->getState());
-}
-
 Person::Person(Person& other)
 {
     m_name = other.getName();
