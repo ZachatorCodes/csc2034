@@ -12,6 +12,9 @@ class Address
     // Constructors
     Address(std::string street, std::string city, std::string state);
 
+    // Destructors
+    ~Address();
+
     // Getters
     std::string getCity();
     std::string getState();

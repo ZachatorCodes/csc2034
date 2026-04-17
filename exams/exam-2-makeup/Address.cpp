@@ -7,6 +7,10 @@ Address::Address(std::string street, std::string city, std::string state)
     m_state = state;
 }
 
+Address::~Address()
+{
+}
+
 std::string Address::getCity()
 {
     return m_city;
