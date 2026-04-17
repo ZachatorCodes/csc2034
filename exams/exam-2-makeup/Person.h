@@ -12,8 +12,11 @@ class Person
     // Constructors
     Person(std::string name);
 
-    // Getters and Setters
+    // Getters
     Address getAddress();
+    std::string getName();
+
+    // Setters
     void setAddress(Address* addy);
     void setName(std::string name);
 };
