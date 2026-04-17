@@ -40,3 +40,9 @@ void Address::setStreet(std::string street)
 {
     m_street = street;
 }
+
+std::ostream& operator<<(std::ostream& out, Address address)
+{
+    out << address.m_street << ", " << address.m_city << ", " << address.m_state;
+    return out;
+}
