@@ -7,6 +7,21 @@ Address::Address(std::string street, std::string city, std::string state)
     m_state = state;
 }
 
+std::string Address::getCity()
+{
+    return m_city;
+}
+
+std::string Address::getState()
+{
+    return m_state;
+}
+
+std::string Address::getStreet()
+{
+    return m_street;
+}
+
 void Address::setCity(std::string city)
 {
     m_city = city;

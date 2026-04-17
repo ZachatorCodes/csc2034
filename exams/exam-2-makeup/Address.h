@@ -12,7 +12,12 @@ class Address
     // Constructors
     Address(std::string street, std::string city, std::string state);
 
-    // Getters and Setters
+    // Getters
+    std::string getCity();
+    std::string getState();
+    std::string getStreet();
+
+    // Setters
     void setCity(std::string city);
     void setState(std::string state);
     void setStreet(std::string street);
