@@ -24,4 +24,7 @@ class Address
     void setCity(std::string city);
     void setState(std::string state);
     void setStreet(std::string street);
+
+    // Overloads
+    friend std::ostream& operator<<(std::ostream& out, Address address);
 };
