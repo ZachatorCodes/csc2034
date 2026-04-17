@@ -9,6 +9,11 @@ class Person
     Address* m_addr;
 
   public:
+    // Constructors
     Person(std::string name);
+
+    // Getters and Setters
+    Address getAddress();
     void setAddress(Address* addy);
+    void setName(std::string name);
 };
