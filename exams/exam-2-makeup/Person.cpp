@@ -21,7 +21,7 @@ Person::Person(Person& other)
 Person& Person::operator=(Person& other)
 {
     m_name = other.getName();
-    delete[] m_addr;
+    delete m_addr;
     m_addr = new Address(other.getAddress().getStreet(), other.getAddress().getCity(), other.getAddress().getState());
     return *this;
 }
