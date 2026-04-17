@@ -6,12 +6,16 @@ Person::Person(std::string name)
     m_name = name;
 }
 
-void Person::setName(std::string name)
+std::string Person::getName()
 {
-    m_name = name;
 }
 
 Address Person::getAddress()
 {
     return (*m_addr);
+}
+
+void Person::setName(std::string name)
+{
+    m_name = name;
 }
