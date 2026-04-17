@@ -20,3 +20,8 @@ void Person::setName(std::string name)
 {
     m_name = name;
 }
+
+void Person::setAddress(Address* addy)
+{
+    m_addr = addy;
+}
