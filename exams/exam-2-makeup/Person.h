@@ -17,6 +17,7 @@ class Person
   public:
     // Constructors
     Person(std::string name);
+    Person(std::string name, Address* addy);
 
     // Destructors
     ~Person();
