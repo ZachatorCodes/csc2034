@@ -1,7 +1,7 @@
 #include "Person.h"
 #include "Address.h"
 
-Person::Person(std::string name)
+Person::Person(std::string name) : m_addr(nullptr)
 {
     m_name = name;
 }
@@ -42,6 +42,7 @@ void Person::setName(std::string name)
 
 void Person::setAddress(Address* addy)
 {
+    delete m_addr;
     m_addr = addy;
 }
 
