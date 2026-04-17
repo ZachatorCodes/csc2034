@@ -18,6 +18,9 @@ class Person
     // Constructors
     Person(std::string name);
 
+    // Destructors
+    ~Person();
+
     // Getters
     Address getAddress();
     std::string getName();
