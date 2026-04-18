@@ -10,9 +10,9 @@ class Student : public Person
         Junior,
         Senior
     };
+    status m_status;
 
   public:
     Student();
-    Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress,
-            status studentStatus);
+    Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, status m_status);
 };
