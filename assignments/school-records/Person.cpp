@@ -1,7 +1,6 @@
 #include "Person.h"
 
-Person::Person()
-    : m_name(""), m_address(""), m_phoneNumber(""), m_emailAddress("")
+Person::Person() : m_name(""), m_address(""), m_phoneNumber(""), m_emailAddress("")
 {
 }
 
