@@ -23,4 +23,6 @@ int main(int, char**)
     {
         graph.addEdge(edge[0], edge[1], edge[2]);
     }
+
+    graph.printGraph();
 }
