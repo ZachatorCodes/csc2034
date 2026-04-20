@@ -32,3 +32,16 @@ bool Graph<K, E>::addVertex(K key)
     vertices.push_back(*newVertex);
     return true;
 }
+
+template <typename K, typename E>
+bool Graph<K, E>::addEdge(K src, K dst, E edgeData)
+{
+    if (findEdge(src, dst, edgeData))
+    {
+        return false;
+    }
+    Edge<K, E>* newEdge = new Edge<K, E>(findVertex(src), findVertex(dst), edgeData);
+    auto neighbors = newEdge->getSource()->neighbors;
+    neighbors->push_back(*newEdge);
+    return true;
+}
