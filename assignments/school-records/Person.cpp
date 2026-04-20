@@ -8,3 +8,23 @@ Person::Person(std::string name, std::string address, std::string phoneNumber, s
     : m_name(name), m_address(address), m_phoneNumber(phoneNumber), m_emailAddress(emailAddress)
 {
 }
+
+std::string Person::getName() const
+{
+    return m_name;
+}
+
+std::string Person::getAddress() const
+{
+    return m_address;
+}
+
+std::string Person::getPhoneNumber() const
+{
+    return m_phoneNumber;
+}
+
+std::string Person::getEmailAddress() const
+{
+    return m_emailAddress;
+}
