@@ -101,3 +101,19 @@ bool Edge<K, E>::operator==(const Edge<K, E>& other)
     }
     return false;
 }
+
+template <typename K, typename E>
+void Graph<K, E>::printGraph()
+{
+    for (int i = 0; i < vertices.size(); i++)
+    {
+        Vertex curV = vertices.at(i);
+        std::cout << curV << ":";
+        std::vector<Edge<K, E>>* neighbors = curV.getNeighbors();
+        for (const Edge<K, E>& edge : *neighbors)
+        {
+            std::cout << "  " << edge;
+        }
+        std::cout << std::endl;
+    }
+}
