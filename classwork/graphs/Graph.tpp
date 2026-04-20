@@ -69,3 +69,13 @@ bool Vertex<K, E>::operator==(const Vertex<K, E>& other)
     }
     return false;
 }
+
+template <typename K, typename E>
+bool Edge<K, E>::operator==(const Edge<K, E>& other)
+{
+    if (src == other.src && dest == other.dest)
+    {
+        return true;
+    }
+    return false;
+}

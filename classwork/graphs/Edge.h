@@ -29,4 +29,6 @@ class Edge
 
     template <typename U, typename V>
     friend std::ostream& operator<<(std::ostream&, Edge<U, V>&);
+
+    bool operator==(const Edge<K, E>& other);
 };
