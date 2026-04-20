@@ -14,8 +14,8 @@ class Person
     Person(std::string name, std::string address, std::string phoneNumber, std::string emailAddress);
 
     // Getters
-    std::string getName() const;
-    std::string getAddress() const;
-    std::string getPhoneNumber() const;
-    std::string getEmailAddress() const;
+    const std::string& getName() const;
+    const std::string& getAddress() const;
+    const std::string& getPhoneNumber() const;
+    const std::string& getEmailAddress() const;
 };
