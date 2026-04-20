@@ -2,7 +2,8 @@
 
 #include "Vertex.h"
 
-template <typename K, typename E> class Edge
+template <typename K, typename E>
+class Edge
 {
     E data;
     Vertex<K, E>* src;
@@ -26,5 +27,6 @@ template <typename K, typename E> class Edge
         return data;
     }
 
-    template <typename U, typename V> friend std::ostream& operator<<(std::ostream&, Edge<U, V>&);
+    template <typename U, typename V>
+    friend std::ostream& operator<<(std::ostream&, Edge<U, V>&);
 };
