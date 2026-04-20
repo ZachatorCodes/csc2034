@@ -45,3 +45,17 @@ bool Graph<K, E>::addEdge(K src, K dst, E edgeData)
     neighbors->push_back(*newEdge);
     return true;
 }
+
+template <typename K, typename E>
+Vertex<K, E>* Graph<K, E>::findVertex(K key)
+{
+    Vertex<K, E>* vert{key};
+    auto it = std::find(vertices.begin(), vertices.end(), vert); // find uses == so it must be overriden in vertex
+    if (it != vertices.end())
+    {
+        // int index = std::distance(vertices.begin(), it);
+        // return &vertices[index];
+        return &(*it);
+    }
+    return nullptr;
+}
