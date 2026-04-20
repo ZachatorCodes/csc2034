@@ -16,4 +16,10 @@ class Student : public Person
     // Constructors
     Student();
     Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, status m_status);
+
+    // Getters
+    const status& getStatus() const;
+
+    // Setters
+    void setStatus(status classStatus);
 };

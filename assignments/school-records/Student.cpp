@@ -9,3 +9,13 @@ Student::Student(std::string name, std::string address, std::string phoneNumber,
     : Person(name, address, phoneNumber, emailAddress), m_status(m_status)
 {
 }
+
+const Student::status& Student::getStatus() const
+{
+    return m_status;
+}
+
+void Student::setStatus(status classStatus)
+{
+    m_status = classStatus;
+}
