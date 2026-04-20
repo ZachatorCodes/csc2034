@@ -61,6 +61,28 @@ Vertex<K, E>* Graph<K, E>::findVertex(K key)
 }
 
 template <typename K, typename E>
+Edge<K, E>* Graph<K, E>::findEdge(K src, K dst, E data)
+{
+    Vertex<K, E>* srcV = findVertex(src);
+    Vertex<K, E>* dstV = findVertex(dst);
+
+    if (!srcV || !dstV)
+    {
+        return nullptr;
+    }
+
+    Edge<K, E> edge{srcV, dstV, data};
+    auto it = std::find(srcV->getNeighbors()->begin(), srcV->getNeighbors()->end(), edge);
+    if (it != srcV->getNeighbors()->end())
+    {
+        // int eIndex = std::distance(srcV->getNeighbors()->begin(), it);
+        // return &srcV->getNeighbors()->at(eIndex);
+        return &(*it);
+    }
+    return nullptr;
+}
+
+template <typename K, typename E>
 bool Vertex<K, E>::operator==(const Vertex<K, E>& other)
 {
     if (key == other.key)
