@@ -1,9 +1,11 @@
 #pragma once
 #include <vector>
 
-template <typename K, typename E> class Edge;
+template <typename K, typename E>
+class Edge;
 
-template <typename K, typename E> class Vertex
+template <typename K, typename E>
+class Vertex
 {
     K key;
     std::vector<Edge<K, E>>* neighbors{};
@@ -19,5 +21,8 @@ template <typename K, typename E> class Vertex
         return neighbors;
     }
 
-    template <typename U, typename V> friend std::ostream& operator<<(std::ostream& out, Vertex<U, V>& v);
+    template <typename U, typename V>
+    friend std::ostream& operator<<(std::ostream& out, Vertex<U, V>& v);
+
+    bool operator==(const Vertex<K, E>& other);
 };
