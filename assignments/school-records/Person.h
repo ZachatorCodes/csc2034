@@ -18,4 +18,10 @@ class Person
     const std::string& getAddress() const;
     const std::string& getPhoneNumber() const;
     const std::string& getEmailAddress() const;
+
+    // Setters
+    void setName(std::string name);
+    void setAddress(std::string address);
+    void setPhoneNumber(std::string phoneNumber);
+    void setEmailAddress(std::string emailAddress);
 };
