@@ -41,7 +41,7 @@ bool Graph<K, E>::addEdge(K src, K dst, E edgeData)
         return false;
     }
     Edge<K, E>* newEdge = new Edge<K, E>(findVertex(src), findVertex(dst), edgeData);
-    auto neighbors = newEdge->getSource()->neighbors;
+    auto neighbors = newEdge->getSource()->getNeighbors();
     neighbors->push_back(*newEdge);
     return true;
 }
@@ -49,7 +49,7 @@ bool Graph<K, E>::addEdge(K src, K dst, E edgeData)
 template <typename K, typename E>
 Vertex<K, E>* Graph<K, E>::findVertex(K key)
 {
-    Vertex<K, E>* vert{key};
+    Vertex<K, E> vert{key};
     auto it = std::find(vertices.begin(), vertices.end(), vert); // find uses == so it must be overriden in vertex
     if (it != vertices.end())
     {
@@ -110,7 +110,7 @@ void Graph<K, E>::printGraph()
         Vertex curV = vertices.at(i);
         std::cout << curV << ":";
         std::vector<Edge<K, E>>* neighbors = curV.getNeighbors();
-        for (const Edge<K, E>& edge : *neighbors)
+        for (Edge<K, E>& edge : *neighbors)
         {
             std::cout << "  " << edge;
         }
