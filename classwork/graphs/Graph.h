@@ -2,6 +2,7 @@
 
 #include "Edge.h"
 #include "Vertex.h"
+#include <algorithm>
 
 #include <iostream>
 #include <vector>
