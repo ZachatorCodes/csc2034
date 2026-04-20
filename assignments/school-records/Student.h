@@ -13,6 +13,7 @@ class Student : public Person
     status m_status;
 
   public:
+    // Constructors
     Student();
     Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, status m_status);
 };
