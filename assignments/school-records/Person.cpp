@@ -28,3 +28,23 @@ const std::string& Person::getEmailAddress() const
 {
     return m_emailAddress;
 }
+
+void Person::setName(std::string name)
+{
+    m_name = name;
+}
+
+void Person::setAddress(std::string address)
+{
+    m_address = address;
+}
+
+void Person::setPhoneNumber(std::string phoneNumber)
+{
+    m_phoneNumber = phoneNumber;
+}
+
+void Person::setEmailAddress(std::string emailAddress)
+{
+    m_emailAddress = emailAddress;
+}
