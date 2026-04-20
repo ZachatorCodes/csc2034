@@ -59,3 +59,13 @@ Vertex<K, E>* Graph<K, E>::findVertex(K key)
     }
     return nullptr;
 }
+
+template <typename K, typename E>
+bool Vertex<K, E>::operator==(const Vertex<K, E>& other)
+{
+    if (key == other.key)
+    {
+        return true;
+    }
+    return false;
+}
