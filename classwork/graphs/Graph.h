@@ -6,7 +6,8 @@
 #include <iostream>
 #include <vector>
 
-template <typename K, typename E> class Graph
+template <typename K, typename E>
+class Graph
 {
     std::vector<Vertex<K, E>> vertices;
 
