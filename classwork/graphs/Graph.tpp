@@ -11,7 +11,7 @@ std::ostream& operator<<(std::ostream& out, Vertex<K, E>& v)
 template <typename K, typename E>
 std::ostream& operator<<(std::ostream& out, Edge<K, E>& e)
 {
-    out << "(" << *(e.src) << ", " << *(e.dest) << ", " << e.data << ")" << std::endl;
+    out << "(" << *(e.src) << ", " << *(e.dest) << ", " << e.data << ")";
 
     return out;
 }
@@ -112,7 +112,7 @@ void Graph<K, E>::printGraph()
         std::vector<Edge<K, E>>* neighbors = curV.getNeighbors();
         for (Edge<K, E>& edge : *neighbors)
         {
-            std::cout << "  " << edge;
+            std::cout << " " << edge;
         }
         std::cout << std::endl;
     }
