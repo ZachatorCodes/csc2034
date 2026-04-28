@@ -8,7 +8,18 @@ class Employee : public Person
     double m_salary;
 
   public:
+    // Constructors
     Employee();
     Employee(std::string name, std::string address, std::string phoneNumber, std::string emailAddress,
              std::string office, double salary, std::string dateHired);
+
+    // Getters
+    const std::string& getOffice() const;
+    const std::string& getDateHired() const;
+    double getSalary() const;
+
+    // Setters
+    void setOffice(std::string office);
+    void setDateHired(std::string dateHired);
+    void setSalary(double salary);
 };
