@@ -7,7 +7,8 @@
 
 class Database
 {
-    const std::string m_filePath = "PersonDatabase.csv";
+    const std::string m_filePath = "../../../PersonDatabase.csv";
+    std::ofstream m_file;
 
   public:
     Database();
