@@ -1,5 +1,8 @@
 #pragma once
 #include "Person.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
 #include <vector>
 
 class Database
