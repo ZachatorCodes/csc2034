@@ -13,6 +13,6 @@ class Database
   public:
     Database();
     ~Database();
-    bool writePerson(Person person);
+    bool writePerson(Person* person);
     std::vector<Person> readDatabase();
 };
