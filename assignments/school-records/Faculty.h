@@ -21,6 +21,10 @@ class Faculty : public Employee
     // Getters
     const std::string& getOfficeHours() const;
     const Rank& getFacultyRank() const;
+    const std::string getClassName() const override
+    {
+        return "Faculty";
+    };
 
     // Setters
     void setOfficeHours(std::string officeHours);
