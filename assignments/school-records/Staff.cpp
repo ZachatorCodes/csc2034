@@ -19,3 +19,9 @@ void Staff::setTitle(std::string title)
 {
     m_title = title;
 }
+
+std::ostream& operator<<(std::ostream& out, const Staff& staff)
+{
+    out << staff << ",\"" << staff.getTitle() << "\"";
+    return out;
+}

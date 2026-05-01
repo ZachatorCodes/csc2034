@@ -38,3 +38,9 @@ void Student::setStatus(Status classStatus)
 {
     m_status = classStatus;
 }
+
+std::ostream& operator<<(std::ostream& out, const Student& student)
+{
+    out << student << ",\"" << student.getStatus() << "\"";
+    return out;
+}

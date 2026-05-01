@@ -41,3 +41,10 @@ void Faculty::setFacultyRank(Rank facultyRank)
 {
     m_facultyRank = facultyRank;
 }
+
+std::ostream& operator<<(std::ostream& out, const Faculty& faculty)
+{
+    out << dynamic_cast<const Employee&>(faculty) << ",\"" << faculty.getOfficeHours() << "\",\""
+        << faculty.getFacultyRank() << "\"";
+    return out;
+}

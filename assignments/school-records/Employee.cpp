@@ -39,3 +39,10 @@ void Employee::setSalary(double salary)
 {
     m_salary = salary;
 }
+
+std::ostream& operator<<(std::ostream& out, const Employee& employee)
+{
+    out << employee << ",\"" << employee.getOffice() << "\",\"" << employee.getSalary() << "\",\""
+        << employee.getDateHired() << "\"";
+    return out;
+}
