@@ -1,4 +1,5 @@
 #include "Database.h"
+#include "Faculty.h"
 
 Database::Database() : m_file(m_filePath) {};
 
