@@ -17,6 +17,10 @@ class Employee : public Person
     const std::string& getOffice() const;
     const std::string& getDateHired() const;
     double getSalary() const;
+    virtual const std::string getClassName() const
+    {
+        return "Employee";
+    };
 
     // Setters
     void setOffice(std::string office);
