@@ -1,21 +1,21 @@
 #include "Student.h"
 
-Student::Student() : Person(), m_status(Freshman)
+Student::Student() : Person(), m_status(Status::Freshman)
 {
 }
 
 Student::Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress,
-                 status m_status)
-    : Person(name, address, phoneNumber, emailAddress), m_status(m_status)
+                 Status status)
+    : Person(name, address, phoneNumber, emailAddress), m_status(status)
 {
 }
 
-const Student::status& Student::getStatus() const
+const Status& Student::getStatus() const
 {
     return m_status;
 }
 
-void Student::setStatus(status classStatus)
+void Student::setStatus(Status classStatus)
 {
     m_status = classStatus;
 }

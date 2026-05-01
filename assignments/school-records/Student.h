@@ -1,25 +1,27 @@
 #pragma once
 #include "Person.h"
 
+enum class Status
+{
+    Freshman,
+    Sophomore,
+    Junior,
+    Senior
+};
+
 class Student : public Person
 {
-    enum status
-    {
-        Freshman,
-        Sophomore,
-        Junior,
-        Senior
-    };
-    status m_status;
+
+    Status m_status;
 
   public:
     // Constructors
     Student();
-    Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, status m_status);
+    Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, Status m_status);
 
     // Getters
-    const status& getStatus() const;
+    const Status& getStatus() const;
 
     // Setters
-    void setStatus(status classStatus);
+    void setStatus(Status classStatus);
 };

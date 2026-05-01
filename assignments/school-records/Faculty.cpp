@@ -1,17 +1,17 @@
 #include "Faculty.h"
 
-Faculty::Faculty() : Employee(), m_officeHours(""), m_facultyRank(Junior)
+Faculty::Faculty() : Employee(), m_officeHours(""), m_facultyRank(Rank::Junior)
 {
 }
 
 Faculty::Faculty(std::string name, std::string address, std::string phoneNumber, std::string emailAddress,
-                 std::string office, double salary, std::string dateHired, std::string officeHours, rank facultyRank)
+                 std::string office, double salary, std::string dateHired, std::string officeHours, Rank facultyRank)
     : Employee(name, address, phoneNumber, emailAddress, office, salary, dateHired), m_officeHours(officeHours),
       m_facultyRank(facultyRank)
 {
 }
 
-const Faculty::rank& Faculty::getFacultyRank() const
+const Rank& Faculty::getFacultyRank() const
 {
     return m_facultyRank;
 }
@@ -26,7 +26,7 @@ void Faculty::setOfficeHours(std::string officeHours)
     m_officeHours = officeHours;
 }
 
-void Faculty::setFacultyRank(Faculty::rank facultyRank)
+void Faculty::setFacultyRank(Rank facultyRank)
 {
     m_facultyRank = facultyRank;
 }

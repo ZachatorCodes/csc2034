@@ -1,27 +1,28 @@
 #pragma once
 #include "Employee.h"
 
+enum class Rank
+{
+    Junior,
+    Senior
+};
+
 class Faculty : public Employee
 {
-    enum rank
-    {
-        Junior,
-        Senior
-    };
-    rank m_facultyRank;
+    Rank m_facultyRank;
     std::string m_officeHours;
 
   public:
     // Constructors
     Faculty();
     Faculty(std::string name, std::string address, std::string phoneNumber, std::string emailAddress,
-            std::string office, double salary, std::string dateHired, std::string officeHours, rank facultyRank);
+            std::string office, double salary, std::string dateHired, std::string officeHours, Rank facultyRank);
 
     // Getters
     const std::string& getOfficeHours() const;
-    const rank& getFacultyRank() const;
+    const Rank& getFacultyRank() const;
 
     // Setters
     void setOfficeHours(std::string officeHours);
-    void setFacultyRank(rank facultyRank);
+    void setFacultyRank(Rank facultyRank);
 };
