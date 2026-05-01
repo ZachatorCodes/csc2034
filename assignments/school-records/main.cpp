@@ -27,4 +27,12 @@ int main(int, char**)
                               "Building C, Room 303", 60000.0, "03-10-2019", "Administrative Assistant");
     Staff* staff2 = new Staff("Michael Bichael", "789 Office Blvd", "555-345-6789", "mike.bike@email.com",
                               "Building D, Room 404", 65000.0, "11-01-2017", "Department Head");
+
+    // Write to database
+    database->writePerson(student1);
+    database->writePerson(student2);
+    database->writePerson(faculty1);
+    database->writePerson(faculty2);
+    database->writePerson(staff1);
+    database->writePerson(staff2);
 }
