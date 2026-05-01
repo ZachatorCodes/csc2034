@@ -10,7 +10,7 @@ Staff::Staff(std::string name, std::string address, std::string phoneNumber, std
 {
 }
 
-const std::string& Staff::getTitle() const
+const std::string Staff::getTitle() const
 {
     return m_title;
 }

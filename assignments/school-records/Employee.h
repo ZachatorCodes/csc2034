@@ -14,8 +14,8 @@ class Employee : public Person
              std::string office, double salary, std::string dateHired);
 
     // Getters
-    const std::string& getOffice() const;
-    const std::string& getDateHired() const;
+    const std::string getOffice() const;
+    const std::string getDateHired() const;
     double getSalary() const;
     virtual const std::string getClassName() const
     {

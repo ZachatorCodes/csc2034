@@ -15,10 +15,10 @@ class Person
     Person(std::string name, std::string address, std::string phoneNumber, std::string emailAddress);
 
     // Getters
-    const std::string& getName() const;
-    const std::string& getAddress() const;
-    const std::string& getPhoneNumber() const;
-    const std::string& getEmailAddress() const;
+    const std::string getName() const;
+    const std::string getAddress() const;
+    const std::string getPhoneNumber() const;
+    const std::string getEmailAddress() const;
     virtual const std::string getClassName() const
     {
         return "Person";

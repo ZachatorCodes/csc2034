@@ -9,22 +9,22 @@ Person::Person(std::string name, std::string address, std::string phoneNumber, s
 {
 }
 
-const std::string& Person::getName() const
+const std::string Person::getName() const
 {
     return m_name;
 }
 
-const std::string& Person::getAddress() const
+const std::string Person::getAddress() const
 {
     return m_address;
 }
 
-const std::string& Person::getPhoneNumber() const
+const std::string Person::getPhoneNumber() const
 {
     return m_phoneNumber;
 }
 
-const std::string& Person::getEmailAddress() const
+const std::string Person::getEmailAddress() const
 {
     return m_emailAddress;
 }

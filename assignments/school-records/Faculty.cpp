@@ -11,12 +11,23 @@ Faculty::Faculty(std::string name, std::string address, std::string phoneNumber,
 {
 }
 
-const Rank& Faculty::getFacultyRank() const
+const std::string Faculty::getFacultyRank() const
 {
-    return m_facultyRank;
+    if (m_facultyRank == Rank::Junior)
+    {
+        return "Junior";
+    }
+    else if (m_facultyRank == Rank::Senior)
+    {
+        return "Senior";
+    }
+    else
+    {
+        return "Unknown";
+    }
 }
 
-const std::string& Faculty::getOfficeHours() const
+const std::string Faculty::getOfficeHours() const
 {
     return m_officeHours;
 }

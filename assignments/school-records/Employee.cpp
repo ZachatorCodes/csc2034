@@ -10,12 +10,12 @@ Employee::Employee(std::string name, std::string address, std::string phoneNumbe
 {
 }
 
-const std::string& Employee::getOffice() const
+const std::string Employee::getOffice() const
 {
     return m_office;
 }
 
-const std::string& Employee::getDateHired() const
+const std::string Employee::getDateHired() const
 {
     return m_dateHired;
 }

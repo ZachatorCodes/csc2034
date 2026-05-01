@@ -12,7 +12,7 @@ class Staff : public Employee
           double salary, std::string dateHired, std::string title);
 
     // Getters
-    const std::string& getTitle() const;
+    const std::string getTitle() const;
     const std::string getClassName() const override
     {
         return "Staff";

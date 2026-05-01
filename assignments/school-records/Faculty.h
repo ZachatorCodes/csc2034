@@ -19,8 +19,8 @@ class Faculty : public Employee
             std::string office, double salary, std::string dateHired, std::string officeHours, Rank facultyRank);
 
     // Getters
-    const std::string& getOfficeHours() const;
-    const Rank& getFacultyRank() const;
+    const std::string getOfficeHours() const;
+    const std::string getFacultyRank() const;
     const std::string getClassName() const override
     {
         return "Faculty";
