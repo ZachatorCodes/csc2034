@@ -20,7 +20,7 @@ class Student : public Person
     Student(std::string name, std::string address, std::string phoneNumber, std::string emailAddress, Status m_status);
 
     // Getters
-    const Status& getStatus() const;
+    const std::string getStatus() const;
     const std::string getClassName() const override
     {
         return "Student";
