@@ -21,6 +21,10 @@ class Student : public Person
 
     // Getters
     const Status& getStatus() const;
+    const std::string getClassName() const override
+    {
+        return "Student";
+    };
 
     // Setters
     void setStatus(Status classStatus);

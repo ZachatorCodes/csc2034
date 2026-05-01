@@ -13,6 +13,10 @@ class Staff : public Employee
 
     // Getters
     const std::string& getTitle() const;
+    const std::string getClassName() const override
+    {
+        return "Staff";
+    };
 
     // Setters
     void setTitle(std::string title);
