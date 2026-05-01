@@ -28,6 +28,10 @@ const std::string Student::getStatus() const
     {
         return "Senior";
     }
+    else
+    {
+        return "Unknown";
+    }
 }
 
 void Student::setStatus(Status classStatus)
