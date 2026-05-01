@@ -26,4 +26,7 @@ class Employee : public Person
     void setOffice(std::string office);
     void setDateHired(std::string dateHired);
     void setSalary(double salary);
+
+    // Operator Overload
+    friend std::ostream& operator<<(std::ostream& out, const Employee& employee);
 };

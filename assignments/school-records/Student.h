@@ -28,4 +28,7 @@ class Student : public Person
 
     // Setters
     void setStatus(Status classStatus);
+
+    // Operator Overload
+    friend std::ostream& operator<<(std::ostream& out, const Student& student);
 };

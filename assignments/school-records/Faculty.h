@@ -29,4 +29,7 @@ class Faculty : public Employee
     // Setters
     void setOfficeHours(std::string officeHours);
     void setFacultyRank(Rank facultyRank);
+
+    // Operator Overload
+    friend std::ostream& operator<<(std::ostream& out, const Faculty& faculty);
 };

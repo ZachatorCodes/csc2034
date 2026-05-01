@@ -20,4 +20,7 @@ class Staff : public Employee
 
     // Setters
     void setTitle(std::string title);
+
+    // Operator Overload
+    friend std::ostream& operator<<(std::ostream& out, const Staff& staff);
 };
