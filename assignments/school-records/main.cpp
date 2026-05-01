@@ -3,6 +3,8 @@
 #include "Staff.h"
 #include "Student.h"
 
+// GET RID OF REFERENCES, DON'T RETURN REFERENCES
+
 int main(int, char**)
 {
     // Create a new database object
