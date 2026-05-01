@@ -18,6 +18,10 @@ class Person
     const std::string& getAddress() const;
     const std::string& getPhoneNumber() const;
     const std::string& getEmailAddress() const;
+    virtual const std::string getClassName() const
+    {
+        return "Person";
+    };
 
     // Setters
     void setName(std::string name);
