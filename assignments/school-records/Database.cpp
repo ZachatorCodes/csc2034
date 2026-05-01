@@ -5,8 +5,18 @@ Database::Database() : m_file(m_filePath) {};
 
 bool Database::writePerson(Person* person)
 {
-    Faculty* faculty = (dynamic_cast<Faculty*>(person));
-    std::cout << person->getClassName() << std::endl;
+    if (Faculty* faculty = dynamic_cast<Faculty*>(person))
+    {
+        std::cout << faculty->getOfficeHours() << std::endl;
+    }
+    else if (Staff* staff = dynamic_cast<Staff*>(person))
+    {
+        std::cout << staff->getClassName() << std::endl;
+    }
+    else if (Student* student = dynamic_cast<Student*>(person))
+    {
+        std::cout << student->getClassName() << std::endl;
+    }
 
     // m_file << '\"' << person->getName() << "\",\"" << person->getAddress() << "\",\"" << person->getPhoneNumber()
     //        << "\",\"" << person->getEmailAddress() << "\"\n";
