@@ -1,5 +1,7 @@
 #include "Database.h"
-#include <iostream>
+#include "Faculty.h"
+#include "Staff.h"
+#include "Student.h"
 
 int main(int, char**)
 {
