@@ -4,6 +4,7 @@
 #include "Student.h"
 
 // GET RID OF REFERENCES, DON'T RETURN REFERENCES
+// Read about dangling references
 
 int main(int, char**)
 {
