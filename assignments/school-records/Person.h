@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 
 class Person
@@ -28,4 +29,7 @@ class Person
     void setAddress(std::string address);
     void setPhoneNumber(std::string phoneNumber);
     void setEmailAddress(std::string emailAddress);
+
+    // Operator Overload
+    friend std::ostream& operator<<(std::ostream& out, const Person& person);
 };
