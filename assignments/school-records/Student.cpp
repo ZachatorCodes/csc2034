@@ -10,9 +10,24 @@ Student::Student(std::string name, std::string address, std::string phoneNumber,
 {
 }
 
-const Status& Student::getStatus() const
+const std::string Student::getStatus() const
 {
-    return m_status;
+    if (m_status == Status::Freshman)
+    {
+        return "Freshman";
+    }
+    else if (m_status == Status::Sophomore)
+    {
+        return "Sophomore";
+    }
+    else if (m_status == Status::Junior)
+    {
+        return "Junior";
+    }
+    else if (m_status == Status::Senior)
+    {
+        return "Senior";
+    }
 }
 
 void Student::setStatus(Status classStatus)
