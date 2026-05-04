@@ -26,9 +26,8 @@ std::vector<Person> Database::readDatabase()
         // Parse each field in the line using a comma delimiter
         while (std::getline(ss, personField, ','))
         {
-            row.push_back(field);
+            personData.push_back(personField.substr(1, personField.size() - 2)); // Remove the quotes
         }
-        people.push_back(row); // Add the row to the data storage
     }
     file.close();
 
