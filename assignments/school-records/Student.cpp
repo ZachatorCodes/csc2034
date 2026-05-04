@@ -39,6 +39,28 @@ void Student::setStatus(Status classStatus)
     m_status = classStatus;
 }
 
+void Student::setStatus(std::string classStatus)
+{
+    std::transform(classStatus.begin(), classStatus.end(), classStatus.begin(), ::tolower);
+
+    if (classStatus == "freshman")
+    {
+        m_status = Status::Freshman;
+    }
+    else if (classStatus == "sophomore")
+    {
+        m_status = Status::Sophomore;
+    }
+    else if (classStatus == "junior")
+    {
+        m_status = Status::Junior;
+    }
+    else if (classStatus == "senior")
+    {
+        m_status = Status::Senior;
+    }
+}
+
 std::ostream& operator<<(std::ostream& out, const Student& student)
 {
     out << student << ",\"" << student.getStatus() << "\"";
