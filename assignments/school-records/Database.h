@@ -13,5 +13,5 @@ class Database
   public:
     Database();
     bool writePerson(Person* person);
-    std::vector<std::vector<std::string>> readDatabase();
+    std::vector<Person*> readDatabase();
 };
