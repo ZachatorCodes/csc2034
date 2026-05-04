@@ -63,7 +63,7 @@ void Student::setStatus(std::string classStatus)
 
 std::ostream& operator<<(std::ostream& out, const Student& student)
 {
-    out << student << ",\"" << student.getStatus() << "\"";
+    student.print(out);
     return out;
 }
 
