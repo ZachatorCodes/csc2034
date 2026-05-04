@@ -43,6 +43,23 @@ std::vector<Person*> Database::readDatabase()
             faculty->setFacultyRank(personData[9]);
             people.push_back(faculty);
         }
+        else if (personData[0] == "Staff")
+        {
+            Staff* staff = new Staff(personData[1], personData[2], personData[3], personData[4], personData[5],
+                                     std::stod(personData[6]), personData[7], personData[8]);
+            people.push_back(staff);
+        }
+        else if (personData[0] == "Employee")
+        {
+            Employee* employee = new Employee(personData[1], personData[2], personData[3], personData[4], personData[5],
+                                              std::stod(personData[6]), personData[7]);
+            people.push_back(employee);
+        }
+        else if (personData[0] == "Person")
+        {
+            Person* person = new Person(personData[1], personData[2], personData[3], personData[4]);
+            people.push_back(person);
+        }
     }
     file.close();
 
