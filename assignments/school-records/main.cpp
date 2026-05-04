@@ -38,9 +38,9 @@ int main(int, char**)
     database->writePerson(staff1);
     database->writePerson(staff2);
 
-    std::vector<Person> people = database->readDatabase();
-    for (const Person& person : people)
+    std::vector<Person*> people = database->readDatabase();
+    for (Person* person : people)
     {
-        std::cout << person << std::endl;
+        std::cout << *person << std::endl;
     }
 }

@@ -11,11 +11,11 @@ bool Database::writePerson(Person* person)
     return true;
 }
 
-std::vector<Person> Database::readDatabase()
+std::vector<Person*> Database::readDatabase()
 {
     std::ifstream file(m_filePath);
     std::string line;
-    std::vector<Person> people;
+    std::vector<Person*> people;
 
     while (std::getline(file, line))
     {
@@ -31,8 +31,9 @@ std::vector<Person> Database::readDatabase()
 
         if (personData[0] == "Student")
         {
-            Student student = Student(personData[1], personData[2], personData[3], personData[4], Status::Freshman);
-            student.setStatus(personData[5]);
+            Student* student =
+                new Student(personData[1], personData[2], personData[3], personData[4], Status::Freshman);
+            student->setStatus(personData[5]);
             people.push_back(student);
         }
     }
