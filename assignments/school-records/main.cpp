@@ -40,4 +40,13 @@ int main(int, char**)
     database->writePerson(staff2);
 
     std::vector<std::vector<std::string>> people = database->readDatabase();
+
+    for (const std::vector<std::string>& person : people)
+    {
+        for (const std::string& field : person)
+        {
+            std::cout << field << ",";
+        }
+        std::cout << std::endl;
+    }
 }
