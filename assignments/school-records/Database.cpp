@@ -20,11 +20,11 @@ std::vector<Person> Database::readDatabase()
     while (std::getline(file, line))
     {
         std::stringstream ss(line); // Create a stringstream from the line
-        std::string field;
-        std::vector<std::string> row;
+        std::string personField;
+        std::vector<std::string> personData;
 
         // Parse each field in the line using a comma delimiter
-        while (std::getline(ss, field, ','))
+        while (std::getline(ss, personField, ','))
         {
             row.push_back(field);
         }
