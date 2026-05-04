@@ -42,6 +42,20 @@ void Faculty::setFacultyRank(Rank facultyRank)
     m_facultyRank = facultyRank;
 }
 
+void Faculty::setFacultyRank(std::string facultyRank)
+{
+    std::transform(facultyRank.begin(), facultyRank.end(), facultyRank.begin(), ::tolower);
+
+    if (facultyRank == "junior")
+    {
+        m_facultyRank = Rank::Junior;
+    }
+    else if (facultyRank == "senior")
+    {
+        m_facultyRank = Rank::Senior;
+    }
+}
+
 std::ostream& operator<<(std::ostream& out, const Faculty& faculty)
 {
     faculty.print(out);
