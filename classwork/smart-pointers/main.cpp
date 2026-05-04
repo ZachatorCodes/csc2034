@@ -14,6 +14,11 @@ void printPerson(Person* person)
     std::cout << *person;
 }
 
+void printPerson(std::shared_ptr<Person> person)
+{
+    std::cout << *person;
+}
+
 int main(int, char**)
 {
     // NOT the prefered way
@@ -30,6 +35,14 @@ int main(int, char**)
 
     auto maryAddr = std::make_unique<Address>("123 Main St", "Anytown", "CA");
     mary->setAddress(std::move(maryAddr)); // overloads -> to use unique_ptr version of setAddress
+
+    // destroys the managed resource as well as the pointer
+    mary = nullptr;
+
+    std::shared_ptr<Person> bob = std::make_shared<Person>("Bob", 40);
+    auto bobClone = bob; // shared ownership, reference count increases
+
+    printPerson(bobClone);
 
     std::cout << "End of Program" << std::endl;
 }
