@@ -11,7 +11,7 @@ bool Database::writePerson(Person* person)
     return true;
 }
 
-std::vector<std::vector<std::string>> Database::readDatabase()
+std::vector<Person*> Database::readDatabase()
 {
     std::ifstream file(m_filePath);
     std::string line;
