@@ -3,6 +3,16 @@
 #include <memory> // needed for smart pointers
 #include <vector>
 
-int main(int, char**){
-    std::cout << "Hello, from smart-pointers!\n";
+int main(int, char**)
+{
+    // It is important to look at the lifetime of your data
+    // Use these to avoid C-style arrays
+    std::array<int, 5> arr{1, 2, 3, 4, 5};
+    std::vector<int> vec{1, 2, 3, 4, 5};
+
+    // NOT the prefered way (exceptions can happen)
+    std::unique_ptr<Person> tom{new Person("Tom", 25)};
+
+    // Prefered way
+    std::unique_ptr<Person> mary{std::make_unique<Person>("Mary", 30)};
 }
