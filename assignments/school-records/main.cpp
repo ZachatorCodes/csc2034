@@ -38,16 +38,4 @@ int main(int, char**)
     database->writePerson(faculty2);
     database->writePerson(staff1);
     database->writePerson(staff2);
-
-    std::vector<std::vector<std::string>> people = database->readDatabase();
-    std::cout << std::endl; // For console print formatting
-
-    for (const std::vector<std::string>& person : people)
-    {
-        for (const std::string& field : person)
-        {
-            std::cout << field << ", ";
-        }
-        std::cout << std::endl;
-    }
 }
