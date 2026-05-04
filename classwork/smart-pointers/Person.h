@@ -28,6 +28,12 @@ class Person
         return m_name;
     }
 
+    void setAddress(std::unique_ptr<Address> addr)
+    {
+        // m_addr = addr; // error, cannot copy unique_ptr
+        m_addr = std::move(addr);
+    }
+
     friend std::ostream& operator<<(std::ostream& out, const Person& person)
     {
         out << person.m_name << ' ' << person.m_age << std::endl;
