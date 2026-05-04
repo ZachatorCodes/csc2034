@@ -1,5 +1,6 @@
 #pragma once
 #include "Employee.h"
+#include <algorithm>
 
 enum class Rank
 {
