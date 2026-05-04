@@ -46,8 +46,9 @@ int main(int, char**)
     {
         for (const std::string& field : person)
         {
-            std::cout << field << ",";
+            std::cout << field << ", ";
         }
+        std::cout << '\n';
         std::cout << std::endl;
     }
 }
