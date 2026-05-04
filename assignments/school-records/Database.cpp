@@ -36,6 +36,13 @@ std::vector<Person*> Database::readDatabase()
             student->setStatus(personData[5]);
             people.push_back(student);
         }
+        else if (personData[0] == "Faculty")
+        {
+            Faculty* faculty = new Faculty(personData[1], personData[2], personData[3], personData[4], personData[5],
+                                           std::stod(personData[6]), personData[7], personData[8], Rank::Junior);
+            faculty->setFacultyRank(personData[9]);
+            people.push_back(faculty);
+        }
     }
     file.close();
 
