@@ -11,11 +11,11 @@ bool Database::writePerson(Person* person)
     return true;
 }
 
-std::vector<Person*> Database::readDatabase()
+std::vector<Person> Database::readDatabase()
 {
     std::ifstream file(m_filePath);
     std::string line;
-    std::vector<Person*> people;
+    std::vector<Person> people;
 
     while (std::getline(file, line))
     {
