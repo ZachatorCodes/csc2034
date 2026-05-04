@@ -38,4 +38,6 @@ int main(int, char**)
     database->writePerson(faculty2);
     database->writePerson(staff1);
     database->writePerson(staff2);
+
+    std::vector<std::vector<std::string>> people = database->readDatabase();
 }
