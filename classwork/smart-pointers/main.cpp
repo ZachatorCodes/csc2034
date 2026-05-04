@@ -44,5 +44,5 @@ int main(int, char**)
 
     printPerson(bobClone);
 
-    std::cout << "End of Program" << std::endl;
+    std::cout << "\033[31m" << "End of Program" << "\033[0m" << std::endl;
 }
