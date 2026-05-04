@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h"
+#include <algorithm>
 
 enum class Status
 {
