@@ -30,6 +30,7 @@ class Person
     void setPhoneNumber(std::string phoneNumber);
     void setEmailAddress(std::string emailAddress);
 
-    // Operator Overload
+    // Operator Overload / Helper Functions
     friend std::ostream& operator<<(std::ostream& out, const Person& person);
+    virtual void print(std::ostream& out) const;
 };

@@ -44,3 +44,9 @@ std::ostream& operator<<(std::ostream& out, const Student& student)
     out << student << ",\"" << student.getStatus() << "\"";
     return out;
 }
+
+void Student::print(std::ostream& out) const
+{
+    Person::print(out);
+    out << ",\"" << getStatus() << '"';
+}

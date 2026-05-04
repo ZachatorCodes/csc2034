@@ -21,6 +21,7 @@ class Staff : public Employee
     // Setters
     void setTitle(std::string title);
 
-    // Operator Overload
+    // Operator Overload / Helper Functions
     friend std::ostream& operator<<(std::ostream& out, const Staff& staff);
+    void print(std::ostream& out) const override;
 };

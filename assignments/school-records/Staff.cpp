@@ -22,6 +22,12 @@ void Staff::setTitle(std::string title)
 
 std::ostream& operator<<(std::ostream& out, const Staff& staff)
 {
-    out << staff << ",\"" << staff.getTitle() << "\"";
+    staff.print(out);
     return out;
+}
+
+void Staff::print(std::ostream& out) const
+{
+    Employee::print(out);
+    out << ",\"" << getTitle() << "\"";
 }

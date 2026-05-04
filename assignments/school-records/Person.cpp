@@ -51,7 +51,12 @@ void Person::setEmailAddress(std::string emailAddress)
 
 std::ostream& operator<<(std::ostream& out, const Person& person)
 {
-    out << '\"' << person.getClassName() << "\",\"" << person.getName() << "\",\"" << person.getAddress() << "\",\""
-        << person.getPhoneNumber() << "\",\"" << person.getEmailAddress() << '\"';
+    person.print(out);
     return out;
+}
+
+void Person::print(std::ostream& out) const
+{
+    out << '"' << getClassName() << "\",\"" << getName() << "\",\"" << getAddress() << "\",\"" << getPhoneNumber()
+        << "\",\"" << getEmailAddress() << '"';
 }

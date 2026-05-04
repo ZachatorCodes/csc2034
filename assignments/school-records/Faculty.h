@@ -32,4 +32,5 @@ class Faculty : public Employee
 
     // Operator Overload
     friend std::ostream& operator<<(std::ostream& out, const Faculty& faculty);
+    void print(std::ostream& out) const override;
 };
