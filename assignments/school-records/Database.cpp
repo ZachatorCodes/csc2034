@@ -30,5 +30,6 @@ std::vector<std::vector<std::string>> Database::readDatabase()
         }
         people.push_back(row); // Add the row to the data storage
     }
+    file.close();
     return people;
 }
