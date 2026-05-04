@@ -48,7 +48,6 @@ int main(int, char**)
         {
             std::cout << field << ", ";
         }
-        std::cout << '\n';
         std::cout << std::endl;
     }
 }
