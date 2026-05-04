@@ -22,12 +22,14 @@ int main(int, char**)
     // Prefered way
     auto mary{std::make_unique<Person>("Mary", 30)};
 
-    // Pointer is MOVED to printPerson()
-    // tom is now empty (ownership transferred)
+    // Pointer is MOVED to printPerson() and "tom" is now empty (ownership transferred)
     printPerson(std::move(tom));
 
     // Getting the raw pointer
     printPerson(mary.get());
+
+    auto maryAddr = std::make_unique<Address>("123 Main St", "Anytown", "CA");
+    mary->setAddress(std::move(maryAddr)); // overloads -> to use unique_ptr version of setAddress
 
     std::cout << "End of Program" << std::endl;
 }
