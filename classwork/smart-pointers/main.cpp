@@ -44,5 +44,8 @@ int main(int, char**)
 
     printPerson(bobClone);
 
+    bobClone = nullptr;
+    bob = nullptr;
+
     std::cout << "\033[31m" << "End of Program" << "\033[0m" << std::endl;
 }
