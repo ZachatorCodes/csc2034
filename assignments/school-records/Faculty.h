@@ -30,7 +30,7 @@ class Faculty : public Employee
     void setOfficeHours(std::string officeHours);
     void setFacultyRank(Rank facultyRank);
 
-    // Operator Overload
+    // Operator Overload / Helper Functions
     friend std::ostream& operator<<(std::ostream& out, const Faculty& faculty);
     void print(std::ostream& out) const override;
 };
