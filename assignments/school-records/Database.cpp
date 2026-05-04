@@ -15,7 +15,7 @@ std::vector<Person*> Database::readDatabase()
 {
     std::ifstream file(m_filePath);
     std::string line;
-    std::vector<std::vector<std::string>> people;
+    std::vector<Person*> people;
 
     while (std::getline(file, line))
     {
