@@ -7,6 +7,10 @@ class SalariedEmployee : public Employee
 
   public:
     virtual double getPaymentAmount() override;
+    virtual std::string getClassName() override
+    {
+        return "Salaried Employee";
+    }
 
     SalariedEmployee();
     SalariedEmployee(std::string fname, std::string lname, std::string ssNum, double weeklySalary);

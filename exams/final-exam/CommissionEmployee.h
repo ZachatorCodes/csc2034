@@ -8,6 +8,10 @@ class CommissionEmployee : public Employee
 
   public:
     virtual double getPaymentAmount() override;
+    virtual std::string getClassName() override
+    {
+        return "Commission Employee";
+    }
 
     CommissionEmployee();
     CommissionEmployee(std::string fname, std::string lname, std::string ssnum, double comRate, double grossSales);

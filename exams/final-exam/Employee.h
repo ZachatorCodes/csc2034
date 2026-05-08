@@ -10,6 +10,10 @@ class Employee
 
   public:
     virtual double getPaymentAmount() = 0; // pure virtual function (abstract class)
+    virtual std::string getClassName()
+    {
+        return "Employee";
+    }
 
     Employee();
     Employee(std::string fname, std::string lname, std::string ssnum);

@@ -8,6 +8,10 @@ class HourlyEmployee : public Employee
 
   public:
     virtual double getPaymentAmount() override;
+    virtual std::string getClassName() override
+    {
+        return "Hourly Employee";
+    }
 
     HourlyEmployee();
     HourlyEmployee(std::string fname, std::string lname, std::string ssnum, double hrWage, double hrs);

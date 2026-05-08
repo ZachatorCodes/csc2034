@@ -7,6 +7,10 @@ class BasePlusCommissionEmployee : public CommissionEmployee
 
   public:
     virtual double getPaymentAmount() override;
+    virtual std::string getClassName() override
+    {
+        return "Base Plus Commission Employee";
+    }
 
     BasePlusCommissionEmployee();
     BasePlusCommissionEmployee(std::string fname, std::string lname, std::string ssnum, double comRate,
