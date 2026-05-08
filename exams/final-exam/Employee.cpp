@@ -41,7 +41,10 @@ void Employee::setSSNum(std::string ssNum)
 
 void Employee::print(std::ostream& out)
 {
-    out << "First Name: " << m_firstName << '\n' << "Last Name: " << m_lastName << '\n' << "SS Number: " << m_ssNum;
+    out << getClassName() << '\n'
+        << "First Name: " << m_firstName << '\n'
+        << "Last Name: " << m_lastName << '\n'
+        << "SS Number: " << m_ssNum;
 }
 
 std::ostream& operator<<(std::ostream& out, Employee& emp)
