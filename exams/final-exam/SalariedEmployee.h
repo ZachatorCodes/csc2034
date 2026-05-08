@@ -6,10 +6,12 @@ class SalariedEmployee : public Employee
     double m_weeklySalary;
 
   public:
-    double getPaymentAmount() override;
+    virtual double getPaymentAmount() override;
 
     SalariedEmployee();
     SalariedEmployee(std::string fname, std::string lname, std::string ssNum, double weeklySalary);
+
+    double getWeeklySalary();
 
     void setWeeklySalary(double salary);
 
