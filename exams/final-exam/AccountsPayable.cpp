@@ -34,10 +34,10 @@ int main(int, char**)
     for (Employee* employee : payableEmployees)
     {
         printEmployee(*employee);
-
-        if (dynamic_cast<BasePlusCommissionEmployee*>(employee) != nullptr)
+        BasePlusCommissionEmployee* bsPlsEmp = dynamic_cast<BasePlusCommissionEmployee*>(employee);
+        if (bsPlsEmp != nullptr)
         {
-            basePlusCommissionEmp->setBasePay(1.10 * basePlusCommissionEmp->getBasePay());
+            bsPlsEmp->setBasePay(1.10 * bsPlsEmp->getBasePay());
         }
     }
 
