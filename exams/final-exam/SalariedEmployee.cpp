@@ -11,6 +11,11 @@ SalariedEmployee::SalariedEmployee(std::string fname, std::string lname, std::st
 
 double SalariedEmployee::getPaymentAmount()
 {
+    return getWeeklySalary();
+}
+
+double SalariedEmployee::getWeeklySalary()
+{
     return m_weeklySalary;
 }
 
@@ -22,7 +27,7 @@ void SalariedEmployee::setWeeklySalary(double salary)
 void SalariedEmployee::print(std::ostream& out)
 {
     Employee::print(out);
-    out << '\n' << "Weekly Salary: " << m_weeklySalary;
+    out << '\n' << "Weekly Salary: " << m_weeklySalary << '\n' << "Payment Ammount: " << getPaymentAmount() << '\n';
 }
 
 std::ostream& operator<<(std::ostream& out, SalariedEmployee& salEmp)
