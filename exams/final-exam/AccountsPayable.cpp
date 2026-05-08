@@ -4,7 +4,6 @@
 #include "HourlyEmployee.h"
 #include "SalariedEmployee.h"
 #include <algorithm>
-#include <iostream>
 #include <vector>
 
 void printEmployee(Employee& emp)
