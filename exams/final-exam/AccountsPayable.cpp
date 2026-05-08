@@ -1,20 +1,52 @@
+#include "BasePlusCommissionEmployee.h"
 #include "CommissionEmployee.h"
 #include "Employee.h"
 #include "HourlyEmployee.h"
 #include "SalariedEmployee.h"
+#include <algorithm>
 #include <iostream>
+#include <vector>
+
+void printEmployee(Employee& emp)
+{
+    std::cout << emp << std::endl;
+}
 
 int main(int, char**)
 {
-    SalariedEmployee salEmp{SalariedEmployee("Zach", "Schwartz", "562756162", 1000.0)};
+    std::vector<Employee*> payableEmployees;
 
-    std::cout << salEmp << std::endl;
+    HourlyEmployee* hourlyEmp = new HourlyEmployee("John", "Smith", "123456789", 22.0, 12.0);
 
-    CommissionEmployee comEmp{CommissionEmployee("Kishore", "Menezes", "54378928", 10.0, 32.0)};
+    SalariedEmployee* salariedEmp = new SalariedEmployee("Zach", "Schwartz", "562756162", 1000.0);
 
-    std::cout << comEmp << std::endl;
+    CommissionEmployee* commissionEmp = new CommissionEmployee("Kishore", "Menezes", "54378928", 10.0, 32.0);
 
-    HourlyEmployee hrEmp{HourlyEmployee("John", "Smith", "123456789", 22.0, 12.0)};
+    BasePlusCommissionEmployee* basePlusCommissionEmp =
+        new BasePlusCommissionEmployee("Bob", "Black", "847387572", 50.0, 2.0, 100.0);
 
-    std::cout << hrEmp << std::endl;
+    payableEmployees.push_back(hourlyEmp);
+    payableEmployees.push_back(salariedEmp);
+    payableEmployees.push_back(commissionEmp);
+    payableEmployees.push_back(basePlusCommissionEmp);
+
+    std::cout << "Unsorted / Unmodified Data\n" << std::endl;
+    for (Employee* employee : payableEmployees)
+    {
+        printEmployee(*employee);
+
+        if (dynamic_cast<BasePlusCommissionEmployee*>(employee) != nullptr)
+        {
+            basePlusCommissionEmp->setBasePay(1.10 * basePlusCommissionEmp->getBasePay());
+        }
+    }
+
+    std::sort(payableEmployees.begin(), payableEmployees.end(),
+              [](Employee* a, Employee* b) { return a->getPaymentAmount() > b->getPaymentAmount(); });
+
+    std::cout << "Sorted and Modified Data\n" << std::endl;
+    for (Employee* employee : payableEmployees)
+    {
+        printEmployee(*employee);
+    }
 }
